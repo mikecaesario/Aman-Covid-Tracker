@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Aman_Covid_TrackerApp: App {
+    @StateObject var viewModel = CovidDataService()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(viewModel)
         }
     }
 }
