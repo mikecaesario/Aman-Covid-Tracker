@@ -5,6 +5,21 @@
 //  Created by Michael Caesario on 26/06/22.
 //
 
+/*
+ 
+ JSON Response:
+ {
+     "Active Cases_text": "+42,935",
+     "Country_text": "Indonesia",
+     "Last Update": "2022-03-02 15:41",
+     "New Cases_text": "+40,920",
+     "New Deaths_text": "+376",
+     "Total Cases_text": "5,630,096",
+     "Total Deaths_text": "149,036",
+     "Total Recovered_text": "4,944,237"
+ }
+ */
+
 import Foundation
 
 struct CaseModel: Codable {

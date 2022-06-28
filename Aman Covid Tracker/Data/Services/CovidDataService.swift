@@ -19,8 +19,7 @@ class CovidDataService: ObservableObject {
     var caseDataSubscription: AnyCancellable?
     var vaccineDataSubscription: AnyCancellable?
     
-    let caseURL = URL(string: "https://covid-19.dataflowkit.com/v1/indonesia")
-    let vaccineURL = URL(string: "https://covid-api.mmediagroup.fr/v1/vaccines?country=Indonesia")
+    
     
     enum sheetSizes: CGFloat, CaseIterable {
         case top = 0.8, middle = 0.5

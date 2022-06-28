@@ -13,7 +13,6 @@ struct SheetHeader: View {
             .fill(.black.opacity(0.3))
             .frame(width: 50, height: 5, alignment: .center)
             .frame(maxWidth: .infinity)
-            .padding(.bottom, 20)
     }
 }
 

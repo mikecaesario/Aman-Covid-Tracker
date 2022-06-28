@@ -14,13 +14,13 @@ struct SheetScrollview: View {
     let vaccineUnavailable: Int = 0
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 15) {
                 topCell
                 caseCell
                 vaccinationCell
-                buttons
             }
+            .padding(.vertical)
         }
     }
 }
@@ -35,9 +35,9 @@ struct SheetScrollview_Previews: PreviewProvider {
 extension SheetScrollview {
     
     var topCell: some View {
-        HStack(spacing: 0) {
-            SheetTopCell(title: "Active Case", glyph: "person.fill", data: viewModel.caseData?.active ?? caseUnavailable)
-            SheetTopCell(title: "Newly Deceased", glyph: "person", data: viewModel.caseData?.newDeath ?? caseUnavailable)
+        HStack(spacing: 15) {
+            SheetTopCell(title: "Active Case", data: viewModel.caseData?.active ?? caseUnavailable, padding: true)
+            SheetTopCell(title: "Newly Deceased", data: viewModel.caseData?.newDeath ?? caseUnavailable, padding: false)
         }
     }
     
@@ -85,13 +85,5 @@ extension SheetScrollview {
         .padding()
         .background(SheetBackground())
         .padding(.horizontal)
-    }
-    
-    var buttons: some View {
-        VStack(spacing: 10) {
-            MainButton(title: "Hotline")
-            MainButton(title: "Website")
-            MainButton(title: "Feeling Unwell?")
-        }
     }
 }

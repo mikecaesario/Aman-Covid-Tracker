@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SheetBackground: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 15)
+        RoundedRectangle(cornerRadius: 20, style: .continuous)
             .fill(Color.main.sheetBackgroundColor)
-            .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 0)
+            .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 0)
     }
 }
 

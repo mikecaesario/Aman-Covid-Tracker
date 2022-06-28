@@ -18,7 +18,6 @@ struct MainButton: View {
             .background(
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
                     .fill(Color.accentColor)
-                    .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 0)
                     .frame(height: 50)
             )
             .padding()

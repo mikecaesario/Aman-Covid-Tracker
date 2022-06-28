@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SheetTopCell: View {
     let title: String
-    let glyph: String
     let data: String
+    let padding: Bool
         
     var body: some View {
         VStack(spacing: 10) {
@@ -19,13 +19,13 @@ struct SheetTopCell: View {
         .padding()
         .frame(maxWidth: .infinity)
         .background(SheetBackground())
-        .padding(.horizontal)
+        .padding(padding ? .leading : .trailing)
     }
 }
 
 struct SheetInformationCell_Previews: PreviewProvider {
     static var previews: some View {
-        SheetTopCell(title: "Total Cases", glyph: "person.3.fill", data: "6,000,000")
+        SheetTopCell(title: "Total Cases", data: "6,000,000", padding: true)
             .previewLayout(.sizeThatFits)
     }
 }
@@ -34,35 +34,24 @@ extension SheetTopCell {
     
     var header: some View {
         VStack(alignment: .leading, spacing: 5) {
-      
-            Text(Image(systemName: glyph))
-                .font(.caption2)
-                .foregroundColor(.white)
-                .padding(10)
-                .background(Circle().fill(Color.main.accentColor))
-            
-            Spacer()
-                .frame(height: 10)
             
             Text(data)
+                .font(.title)
                 .font(.headline)
                 .fontWeight(.bold)
-//                .minimumScaleFactor(0.6)
+                .minimumScaleFactor(0.6)
                 .foregroundColor(Color.main.accentColor)
                 .padding(.top)
             
+            Spacer()
+                .frame(height: 40)
+            
             Text(title)
                 .font(.footnote)
-//                .fontWeight(.medium)
+                .fontWeight(.medium)
                 .foregroundColor(.secondary)
-                .minimumScaleFactor(0.4)
+                .minimumScaleFactor(0.5)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-    }
-    
-    var backgroundRectangle: some View {
-        RoundedRectangle(cornerRadius: 15)
-            .fill(.white)
-            .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 0)
     }
 }

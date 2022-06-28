@@ -26,6 +26,8 @@
 		4C30A01E2868C52F00C3EA32 /* SheetHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A01D2868C52F00C3EA32 /* SheetHeader.swift */; };
 		4C30A0202868D35500C3EA32 /* SheetScrollview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A01F2868D35500C3EA32 /* SheetScrollview.swift */; };
 		4C30A02228696D0C00C3EA32 /* SheetBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A02128696D0B00C3EA32 /* SheetBackground.swift */; };
+		4C30A02A2869C26A00C3EA32 /* NavigationBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0292869C26A00C3EA32 /* NavigationBarItem.swift */; };
+		4C30A02C2869F5AC00C3EA32 /* CircleInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A02B2869F5AC00C3EA32 /* CircleInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		4C30A01D2868C52F00C3EA32 /* SheetHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeader.swift; sourceTree = "<group>"; };
 		4C30A01F2868D35500C3EA32 /* SheetScrollview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetScrollview.swift; sourceTree = "<group>"; };
 		4C30A02128696D0B00C3EA32 /* SheetBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetBackground.swift; sourceTree = "<group>"; };
+		4C30A0292869C26A00C3EA32 /* NavigationBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarItem.swift; sourceTree = "<group>"; };
+		4C30A02B2869F5AC00C3EA32 /* CircleInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 				4C30A02428696D3100C3EA32 /* On Boarding */,
 				4C30A02328696D2200C3EA32 /* Sheets */,
 				4C30A01128686DC500C3EA32 /* MainButton.swift */,
+				4C30A0292869C26A00C3EA32 /* NavigationBarItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 		4C30A025286982D900C3EA32 /* Circle Information */ = {
 			isa = PBXGroup;
 			children = (
+				4C30A02B2869F5AC00C3EA32 /* CircleInformation.swift */,
 			);
 			path = "Circle Information";
 			sourceTree = "<group>";
@@ -283,9 +289,11 @@
 				4C30A0022867D74000C3EA32 /* OnBoardingView.swift in Sources */,
 				4C30A01228686DC500C3EA32 /* MainButton.swift in Sources */,
 				4C30A0092867DAD900C3EA32 /* CaseModel.swift in Sources */,
+				4C30A02C2869F5AC00C3EA32 /* CircleInformation.swift in Sources */,
 				4C30A00B2867DAF300C3EA32 /* VaccineModel.swift in Sources */,
 				4C30A02228696D0C00C3EA32 /* SheetBackground.swift in Sources */,
 				4C30A00E2867DBC200C3EA32 /* NetworkingManager.swift in Sources */,
+				4C30A02A2869C26A00C3EA32 /* NavigationBarItem.swift in Sources */,
 				4C30A0172868707600C3EA32 /* SheetTopCell.swift in Sources */,
 				4C309FEF2867D41D00C3EA32 /* Aman_Covid_TrackerApp.swift in Sources */,
 				4C30A019286879EA00C3EA32 /* SheetListItem.swift in Sources */,
