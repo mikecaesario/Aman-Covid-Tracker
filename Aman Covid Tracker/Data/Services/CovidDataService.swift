@@ -22,7 +22,9 @@ class CovidDataService: ObservableObject {
     var caseDataSubscription: AnyCancellable?
     var vaccineDataSubscription: AnyCancellable?
     
-    
+    #warning("WARNING! fill in valid URL before running the app.")
+    let caseURL = URL(string: "")
+    let vaccineURL = URL(string: "")
     
     enum sheetSizes: CGFloat, CaseIterable {
         case top = 0.8, middle = 0.5

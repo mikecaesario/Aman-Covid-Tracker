@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "bottomsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/LucasMucGH/BottomSheet",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5223eced3713a417e8996857e6ef2fe001d06e48"
+      }
+    }
+  ],
+  "version" : 2
+}
