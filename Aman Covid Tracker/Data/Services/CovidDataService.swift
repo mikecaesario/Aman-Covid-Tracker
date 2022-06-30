@@ -12,9 +12,12 @@ import SwiftUI
 class CovidDataService: ObservableObject {
     @Published var caseData: CaseModel? = nil
     @Published var vaccineData: VaccineModel? = nil
-    @Published var cases: data = .unavailable
-    @Published var vacinnes: data = .unavailable
+    @Published var isLoading: Bool = true
+
     @Published var sheetsPosition: sheetSizes = .middle
+    
+    @Published var showAlert: Bool = false
+    @Published var alertMessage: String? = nil
     
     var caseDataSubscription: AnyCancellable?
     var vaccineDataSubscription: AnyCancellable?
@@ -25,40 +28,54 @@ class CovidDataService: ObservableObject {
         case top = 0.8, middle = 0.5
     }
     
-    enum data {
-        case available, unavailable
-    }
-    
     init() {
         getAllData()
     }
     
     func getAllData() {
-        getCase()
-        getVaccine()
+        // send back the UI components to redacted
+        self.isLoading = true
+        
+        // remove the data from the publisher
+        self.caseData = nil
+        self.vaccineData = nil
+
+        #warning("DispatchQueue Async After is ONLY for testing purposes, remove after testing")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+            do {
+                // try to fetch the data
+                try self?.getCase()
+                try self?.getVaccine()
+            } catch {
+                // if fails, present an error based on throwing APIError
+                self?.showAlert = true
+                self?.alertMessage = error.localizedDescription
+            }
+        }
     }
     
-    func getCase() {
-        guard let url = caseURL else { return }
+    func getCase() throws {
+        // check if the URL is available, else throw an error
+        guard let url = caseURL else { throw APIError.invalidURL }
         
         caseDataSubscription = NetworkingManager.downloadData(url: url)
             .decode(type: CaseModel.self, decoder: JSONDecoder())
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedCases in
                 self?.caseData = returnedCases
                 self?.caseDataSubscription?.cancel()
-                self?.cases = .available
+                self?.isLoading = false
             })
     }
     
-    func getVaccine() {
-        guard let url = vaccineURL else { return }
+    func getVaccine() throws {
+        // check if the URL is available, else throw an error
+        guard let url = vaccineURL else { throw APIError.invalidURL }
         
         vaccineDataSubscription = NetworkingManager.downloadData(url: url)
             .decode(type: VaccineModel.self, decoder: JSONDecoder())
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedVaccine in
                 self?.vaccineData = returnedVaccine
                 self?.vaccineDataSubscription?.cancel()
-                self?.vacinnes = .available
             })
     }
 }

@@ -36,8 +36,8 @@ extension SheetScrollview {
     
     var topCell: some View {
         HStack(spacing: 15) {
-            SheetTopCell(title: "Active Case", data: viewModel.caseData?.active ?? caseUnavailable, padding: true)
-            SheetTopCell(title: "Newly Deceased", data: viewModel.caseData?.newDeath ?? caseUnavailable, padding: false)
+            SheetTopCell(title: "Active Case", data: viewModel.caseData?.active ?? caseUnavailable, padding: true, loading: viewModel.isLoading)
+            SheetTopCell(title: "Newly Deceased", data: viewModel.caseData?.newDeath ?? caseUnavailable, padding: false, loading: viewModel.isLoading)
         }
     }
     
@@ -49,15 +49,15 @@ extension SheetScrollview {
                 .fontWeight(.bold)
                 .padding(.bottom)
             
-            SheetListItem(title: "Total Case", data: viewModel.caseData?.totalCasesText ?? caseUnavailable)
+            SheetListItem(title: "Total Case", data: viewModel.caseData?.totalCasesText ?? caseUnavailable, loading: viewModel.isLoading)
             
             Divider()
             
-            SheetListItem(title: "Total Recovered", data: viewModel.caseData?.totalRecoveredText ?? caseUnavailable)
+            SheetListItem(title: "Total Recovered", data: viewModel.caseData?.totalRecoveredText ?? caseUnavailable, loading: viewModel.isLoading)
             
             Divider()
 
-            SheetListItem(title: "Total Deceased", data: viewModel.caseData?.totalDeathsText ?? caseUnavailable)
+            SheetListItem(title: "Total Deceased", data: viewModel.caseData?.totalDeathsText ?? caseUnavailable, loading: viewModel.isLoading)
         }
         .padding()
         .background(SheetBackground())
@@ -72,15 +72,15 @@ extension SheetScrollview {
                 .fontWeight(.bold)
                 .padding(.bottom)
             
-            SheetListItem(title: "Fully Vaccinated", data: String(viewModel.vaccineData?.all.peopleVaccinated ?? vaccineUnavailable))
+            SheetListItem(title: "Fully Vaccinated", data: String(viewModel.vaccineData?.all.peopleVaccinated ?? vaccineUnavailable), loading: viewModel.isLoading)
             
             Divider()
             
-            SheetListItem(title: "Partially Vaccinated", data: String(viewModel.vaccineData?.all.peoplePartiallyVaccinated ?? vaccineUnavailable))
+            SheetListItem(title: "Partially Vaccinated", data: String(viewModel.vaccineData?.all.peoplePartiallyVaccinated ?? vaccineUnavailable), loading: viewModel.isLoading)
             
             Divider()
             
-            SheetListItem(title: "Total Administered", data: String(viewModel.vaccineData?.all.administered ?? vaccineUnavailable))
+            SheetListItem(title: "Total Administered", data: String(viewModel.vaccineData?.all.administered ?? vaccineUnavailable), loading: viewModel.isLoading)
         }
         .padding()
         .background(SheetBackground())

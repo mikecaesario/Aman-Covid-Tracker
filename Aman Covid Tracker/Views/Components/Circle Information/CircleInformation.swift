@@ -19,7 +19,7 @@ struct CircleInformation: View {
     var body: some View {
         ZStack {
             
-            // First low circle animation
+            // First small circle animation
             Circle()
                 .fill(Color.main.accentColor.opacity(0.8))
                 .scaleEffect(isAnimating ? 2.0 : 0.4)
@@ -57,12 +57,14 @@ struct CircleInformation: View {
                     .foregroundColor(.white)
                     .minimumScaleFactor(0.5)
                 
-                Text(subheader)
-                    .font(Font.system(.title3, design: .rounded))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .minimumScaleFactor(0.5)
-
+                if header != "Unavailable" {
+                    
+                    Text(subheader)
+                        .font(Font.system(.title3, design: .rounded))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .minimumScaleFactor(0.5)
+                }
             }
         }
         .padding(20)

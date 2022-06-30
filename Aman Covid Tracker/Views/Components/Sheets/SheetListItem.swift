@@ -10,6 +10,7 @@ import SwiftUI
 struct SheetListItem: View {
     let title: String
     let data: String
+    let loading: Bool
     
     var body: some View {
         VStack(spacing: 5) {
@@ -18,6 +19,7 @@ struct SheetListItem: View {
                 .fontWeight(.bold)
                 .minimumScaleFactor(0.5)
                 .foregroundColor(Color.main.accentColor)
+                .redacted(reason: loading ? .placeholder : [])
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             Text(title)

@@ -11,6 +11,7 @@ struct SheetTopCell: View {
     let title: String
     let data: String
     let padding: Bool
+    let loading: Bool
         
     var body: some View {
         VStack(spacing: 10) {
@@ -25,7 +26,7 @@ struct SheetTopCell: View {
 
 struct SheetInformationCell_Previews: PreviewProvider {
     static var previews: some View {
-        SheetTopCell(title: "Total Cases", data: "6,000,000", padding: true)
+        SheetTopCell(title: "Total Cases", data: "6,000,000", padding: true, loading: true)
             .previewLayout(.sizeThatFits)
     }
 }
@@ -41,16 +42,17 @@ extension SheetTopCell {
                 .fontWeight(.bold)
                 .minimumScaleFactor(0.6)
                 .foregroundColor(Color.main.accentColor)
+                .redacted(reason: loading ? .placeholder : [])
                 .padding(.top)
             
-            Spacer()
-                .frame(height: 40)
-            
-            Text(title)
-                .font(.footnote)
-                .fontWeight(.medium)
-                .foregroundColor(.secondary)
-                .minimumScaleFactor(0.5)
+                Spacer()
+                    .frame(height: 40)
+                
+                Text(title)
+                    .font(.footnote)
+                    .fontWeight(.medium)
+                    .foregroundColor(.secondary)
+                    .minimumScaleFactor(0.5)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
