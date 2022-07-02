@@ -16,8 +16,8 @@ struct Aman_Covid_Tracker_Widget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgetView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Aman Covid Tracker")
+        .description("Get the latest Covid-19 case information.")
     }
 }
 

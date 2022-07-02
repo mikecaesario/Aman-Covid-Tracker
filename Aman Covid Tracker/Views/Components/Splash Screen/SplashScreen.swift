@@ -15,8 +15,8 @@ struct SplashScreen: View {
     var body: some View {
         ZStack {
             Color.main.accentColor.ignoresSafeArea()
-            
             splashScreenImage
+            splashScreenInfo
         }
         .onAppear {
             
@@ -43,5 +43,13 @@ extension SplashScreen {
             .shadow(color: .black.opacity(0.2), radius: 15, x: 0, y: 15)
             .frame(width: UIScreen.main.bounds.width / 4.5)
             .frame(maxWidth: .infinity, alignment: .center)
+    }
+    
+    var splashScreenInfo: some View {
+        Text("Version " + (UIApplication.appVersion ?? "0"))
+            .font(.footnote)
+            .foregroundColor(.white)
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            .padding()
     }
 }

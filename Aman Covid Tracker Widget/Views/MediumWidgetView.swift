@@ -49,7 +49,9 @@ extension MediumWidgetView {
 
         }
         .padding()
-        .background(Circle().fill(Color.widget.accentColor).blur(radius: 13).frame(width: UIScreen.main.bounds.width / 2.75))
+        .background(Circle().fill(Color.widget.accentColor)
+                        .blur(radius: 10)
+                        .frame(width: UIScreen.main.bounds.width / 3))
         .frame(maxWidth: .infinity)
     }
     
@@ -79,7 +81,8 @@ extension MediumWidgetView {
                 .foregroundColor(.secondary)
         }
         .padding(10)
-        .background(RoundedRectangle(cornerRadius: 17, style: .continuous).fill(Color.widget.accentColor.opacity(0.1)))
+        .background(RoundedRectangle(cornerRadius: 17, style: .continuous)
+                        .fill(Color.widget.accentColor.opacity(0.1)))
         .frame(maxWidth: .infinity)
         .padding()
     }
