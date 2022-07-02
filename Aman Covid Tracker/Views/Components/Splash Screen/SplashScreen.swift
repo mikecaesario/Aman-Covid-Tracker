@@ -41,7 +41,7 @@ extension SplashScreen {
             .resizable()
             .scaledToFit()
             .shadow(color: .black.opacity(0.2), radius: 15, x: 0, y: 15)
-            .frame(width: UIScreen.main.bounds.width / 4)
+            .frame(width: UIScreen.main.bounds.width / 4.5)
             .frame(maxWidth: .infinity, alignment: .center)
     }
 }

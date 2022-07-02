@@ -36,6 +36,14 @@
 		4C30A051286CB54E00C3EA32 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A050286CB54E00C3EA32 /* APIError.swift */; };
 		4C30A054286D860400C3EA32 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A053286D860300C3EA32 /* SplashScreen.swift */; };
 		4C30A056286D91F800C3EA32 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A055286D91F800C3EA32 /* Date.swift */; };
+		4C30A058286F412900C3EA32 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A057286F412900C3EA32 /* UIApplication.swift */; };
+		4C30A05A2870953300C3EA32 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0592870953200C3EA32 /* Entry.swift */; };
+		4C30A05C2870957D00C3EA32 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A05B2870957C00C3EA32 /* Provider.swift */; };
+		4C30A05E287095BA00C3EA32 /* WidgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A05D287095BA00C3EA32 /* WidgetService.swift */; };
+		4C30A0642870968C00C3EA32 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0632870968C00C3EA32 /* WidgetView.swift */; };
+		4C30A0662870974900C3EA32 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0652870974900C3EA32 /* SmallWidgetView.swift */; };
+		4C30A06828709B3E00C3EA32 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A06728709B3E00C3EA32 /* Color.swift */; };
+		4C30A06B28709C5800C3EA32 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A06A28709C5800C3EA32 /* MediumWidgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +101,14 @@
 		4C30A050286CB54E00C3EA32 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		4C30A053286D860300C3EA32 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		4C30A055286D91F800C3EA32 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		4C30A057286F412900C3EA32 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		4C30A0592870953200C3EA32 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		4C30A05B2870957C00C3EA32 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		4C30A05D287095BA00C3EA32 /* WidgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetService.swift; sourceTree = "<group>"; };
+		4C30A0632870968C00C3EA32 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		4C30A0652870974900C3EA32 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
+		4C30A06728709B3E00C3EA32 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		4C30A06A28709C5800C3EA32 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +245,7 @@
 			children = (
 				4C30A01428686E2300C3EA32 /* Color.swift */,
 				4C30A055286D91F800C3EA32 /* Date.swift */,
+				4C30A057286F412900C3EA32 /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +291,9 @@
 			isa = PBXGroup;
 			children = (
 				4C30A03C286B5E1400C3EA32 /* Aman_Covid_Tracker_Widget.swift */,
+				4C30A0612870962800C3EA32 /* Views */,
+				4C30A0622870964300C3EA32 /* Data */,
+				4C30A06928709B4400C3EA32 /* Utilities */,
 				4C30A03E286B5E1600C3EA32 /* Assets.xcassets */,
 				4C30A040286B5E1700C3EA32 /* Info.plist */,
 			);
@@ -286,6 +306,34 @@
 				4C30A053286D860300C3EA32 /* SplashScreen.swift */,
 			);
 			path = "Splash Screen";
+			sourceTree = "<group>";
+		};
+		4C30A0612870962800C3EA32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C30A0632870968C00C3EA32 /* WidgetView.swift */,
+				4C30A0652870974900C3EA32 /* SmallWidgetView.swift */,
+				4C30A06A28709C5800C3EA32 /* MediumWidgetView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C30A0622870964300C3EA32 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4C30A05B2870957C00C3EA32 /* Provider.swift */,
+				4C30A0592870953200C3EA32 /* Entry.swift */,
+				4C30A05D287095BA00C3EA32 /* WidgetService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4C30A06928709B4400C3EA32 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4C30A06728709B3E00C3EA32 /* Color.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +457,7 @@
 				4C30A00B2867DAF300C3EA32 /* VaccineModel.swift in Sources */,
 				4C30A02228696D0C00C3EA32 /* SheetBackground.swift in Sources */,
 				4C30A00E2867DBC200C3EA32 /* NetworkingManager.swift in Sources */,
+				4C30A058286F412900C3EA32 /* UIApplication.swift in Sources */,
 				4C30A02A2869C26A00C3EA32 /* NavigationBarItem.swift in Sources */,
 				4C30A0172868707600C3EA32 /* SheetTopCell.swift in Sources */,
 				4C30A056286D91F800C3EA32 /* Date.swift in Sources */,
@@ -423,7 +472,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C30A05A2870953300C3EA32 /* Entry.swift in Sources */,
+				4C30A06B28709C5800C3EA32 /* MediumWidgetView.swift in Sources */,
+				4C30A05C2870957D00C3EA32 /* Provider.swift in Sources */,
+				4C30A06828709B3E00C3EA32 /* Color.swift in Sources */,
 				4C30A03D286B5E1400C3EA32 /* Aman_Covid_Tracker_Widget.swift in Sources */,
+				4C30A05E287095BA00C3EA32 /* WidgetService.swift in Sources */,
+				4C30A0662870974900C3EA32 /* SmallWidgetView.swift in Sources */,
+				4C30A0642870968C00C3EA32 /* WidgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

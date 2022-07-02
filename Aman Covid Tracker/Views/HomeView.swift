@@ -16,7 +16,7 @@ struct HomeView: View {
     // BottomSheet options
     let bottomSheetOptions: [BottomSheet.Options] = [.disableBottomSafeAreaInsets ,.allowContentDrag, .noDragIndicator, .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: -40), .cornerRadius(25), .noBottomPosition, .animation(.interactiveSpring(response: 0.2, dampingFraction: 0.9))]
     
-    // Transition
+    // Splash screen ransition
     let transition: AnyTransition = AnyTransition.opacity
     
     var body: some View {
@@ -68,6 +68,6 @@ extension HomeView {
         }
         // present on boarding if its the first time the user launch the app
         .sheet(isPresented: $onboardingView, content: { OnBoardingView() })
-        .bottomSheet(bottomSheetPosition: $viewModel.sheetsPosition, options: bottomSheetOptions, headerContent: { SheetHeader() }) { SheetScrollview().environmentObject(viewModel).ignoresSafeArea() }
+        .bottomSheet(bottomSheetPosition: $viewModel.sheetPosition, options: bottomSheetOptions, headerContent: { SheetHeader() }) { SheetScrollview().environmentObject(viewModel).ignoresSafeArea() }
     }
 }

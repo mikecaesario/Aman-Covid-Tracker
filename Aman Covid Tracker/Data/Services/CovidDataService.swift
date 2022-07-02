@@ -14,7 +14,7 @@ class CovidDataService: ObservableObject {
     @Published var vaccineData: VaccineModel? = nil
     @Published var isLoading: Bool = true
 
-    @Published var sheetsPosition: sheetSizes = .middle
+    @Published var sheetPosition: sheetSizes = .middle
     
     @Published var showAlert: Bool = false
     @Published var alertMessage: String? = nil
@@ -23,8 +23,8 @@ class CovidDataService: ObservableObject {
     var vaccineDataSubscription: AnyCancellable?
     
     #warning("WARNING! fill in valid URL before running the app.")
-    let caseURL = URL(string: "")
-    let vaccineURL = URL(string: "")
+    let caseURL = URL(string: "https://covid-19.dataflowkit.com/v1/indonesia")
+    let vaccineURL = URL(string: "https://covid-api.mmediagroup.fr/v1/vaccines?country=Indonesia")
     
     enum sheetSizes: CGFloat, CaseIterable {
         case top = 0.8, middle = 0.5

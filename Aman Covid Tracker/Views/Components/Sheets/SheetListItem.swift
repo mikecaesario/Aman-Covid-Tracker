@@ -33,7 +33,7 @@ struct SheetListItem: View {
 
 struct SheetGridItem_Previews: PreviewProvider {
     static var previews: some View {
-        SheetListItem(title: "Deceased", data: "+ 104")
+        SheetListItem(title: "Deceased", data: "+ 104", loading: false)
             .previewLayout(.sizeThatFits)
     }
 }
