@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Aman_Covid_TrackerApp: App {
-    @StateObject var viewModel = CovidDataService()
+    @StateObject var viewModel = CovidDataViewModel()
     
     var body: some Scene {
         WindowGroup {

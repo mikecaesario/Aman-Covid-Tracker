@@ -9,7 +9,7 @@ import SwiftUI
 import BottomSheet
 
 struct HomeView: View {
-    @EnvironmentObject var viewModel: CovidDataService
+    @EnvironmentObject var viewModel: CovidDataViewModel
     @AppStorage("first_time") var onboardingView: Bool = true
     @State var splashScreen: Bool = true
     
@@ -38,11 +38,11 @@ struct HomeView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(CovidDataService())
+            .environmentObject(preview.covidDataViewModel)
         
-        HomeView()
-            .preferredColorScheme(.dark)
-            .environmentObject(CovidDataService())
+//        HomeView()
+//            .preferredColorScheme(.dark)
+//            .environmentObject(preview.covidDataViewModel)
     }
 }
 

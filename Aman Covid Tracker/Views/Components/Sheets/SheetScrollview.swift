@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SheetScrollview: View {
-    @EnvironmentObject var viewModel: CovidDataService
+    @EnvironmentObject var viewModel: CovidDataViewModel
     
     let caseUnavailable: String = "Unavailable"
     let vaccineUnavailable: Int = 0
@@ -28,7 +28,7 @@ struct SheetScrollview: View {
 struct SheetScrollview_Previews: PreviewProvider {
     static var previews: some View {
         SheetScrollview()
-            .environmentObject(CovidDataService())
+            .environmentObject(preview.covidDataViewModel)
     }
 }
 

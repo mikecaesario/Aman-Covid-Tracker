@@ -56,4 +56,6 @@ struct VaccineDataModel: Codable {
         case capitalCity = "capital_city"
         case updated
     }
+    
+    
 }
