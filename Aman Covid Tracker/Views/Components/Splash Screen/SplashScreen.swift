@@ -9,9 +9,7 @@ import SwiftUI
 
 struct SplashScreen: View {
     @Binding var splashScreen: Bool
-    
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+        
     var body: some View {
         ZStack {
             Color.main.accentColor.ignoresSafeArea()
@@ -21,8 +19,10 @@ struct SplashScreen: View {
         .onAppear {
             
             // for testing purpose
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                splashScreen = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                withAnimation(.easeOut) {
+                    splashScreen = false
+                }
             }
         }
     }

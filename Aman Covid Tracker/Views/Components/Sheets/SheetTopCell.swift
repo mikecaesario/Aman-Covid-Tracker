@@ -37,10 +37,11 @@ extension SheetTopCell {
         VStack(alignment: .leading, spacing: 5) {
             
             Text(data)
-                .font(.title)
+                .font(Font.system(.title, design: .rounded))
                 .font(.headline)
                 .fontWeight(.bold)
                 .minimumScaleFactor(0.6)
+                .lineLimit(1)
                 .foregroundColor(Color.main.accentColor)
                 .redacted(reason: loading ? .placeholder : [])
                 .padding(.top)
@@ -53,6 +54,7 @@ extension SheetTopCell {
                     .fontWeight(.medium)
                     .foregroundColor(.secondary)
                     .minimumScaleFactor(0.5)
+                    .lineLimit(1)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

@@ -1,5 +1,5 @@
 //
-//  CovidDataService.swift
+//  CovidDataViewModel.swift
 //  Aman Covid Tracker
 //
 //  Created by Michael Caesario on 26/06/22.
@@ -12,7 +12,8 @@ import SwiftUI
 class CovidDataViewModel: ObservableObject {
     @Published var caseData: CaseModel? = nil
     @Published var vaccineData: VaccineModel? = nil
-    @Published var isLoading: Bool = true
+    @Published var caseLoading: Bool = true
+    @Published var vaccineLoading: Bool = true
 
     @Published var sheetPosition: sheetSizes = .middle
     
@@ -25,6 +26,8 @@ class CovidDataViewModel: ObservableObject {
     #warning("WARNING! fill in valid URL before running the app.")
     
     
+    
+    
     enum sheetSizes: CGFloat, CaseIterable {
         case top = 0.8, middle = 0.5
     }
@@ -35,7 +38,8 @@ class CovidDataViewModel: ObservableObject {
     
     func getAllData() {
         // send back the UI components to redacted
-        self.isLoading = true
+        self.caseLoading = true
+        self.vaccineLoading = true
         
         // remove the data from the publisher
         self.caseData = nil
@@ -64,7 +68,7 @@ class CovidDataViewModel: ObservableObject {
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedCases in
                 self?.caseData = returnedCases
                 self?.caseDataSubscription?.cancel()
-                self?.isLoading = false
+                self?.caseLoading = false
             })
     }
     
@@ -77,6 +81,7 @@ class CovidDataViewModel: ObservableObject {
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedVaccine in
                 self?.vaccineData = returnedVaccine
                 self?.vaccineDataSubscription?.cancel()
+                self?.vaccineLoading = false
             })
     }
 }

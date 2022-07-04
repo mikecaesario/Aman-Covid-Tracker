@@ -57,5 +57,16 @@ struct VaccineDataModel: Codable {
         case updated
     }
     
-    
+    // formatted integers with decimals to strings
+    var admin: String {
+        return "\(administered.formattedVaccineNumb())"
+    }
+
+    var vaccinated: String {
+        return "\(peopleVaccinated.formattedVaccineNumb())"
+    }
+
+    var partialVaccinated: String {
+        return "\(peoplePartiallyVaccinated.formattedVaccineNumb())"
+    }
 }

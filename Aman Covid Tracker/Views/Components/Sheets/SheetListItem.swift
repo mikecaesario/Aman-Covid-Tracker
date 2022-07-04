@@ -15,10 +15,11 @@ struct SheetListItem: View {
     var body: some View {
         VStack(spacing: 5) {
             Text(data)
-                .font(.headline)
+                .font(Font.system(.headline, design: .rounded))
                 .fontWeight(.bold)
-                .minimumScaleFactor(0.5)
                 .foregroundColor(Color.main.accentColor)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
                 .redacted(reason: loading ? .placeholder : [])
                 .frame(maxWidth: .infinity, alignment: .leading)
             

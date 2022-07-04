@@ -1,8 +1,8 @@
 //
 //  Aman_Covid_TrackerApp.swift
-//  Aman Covid Tracker
+//  Aman Covid Tracker Watch WatchKit Extension
 //
-//  Created by Michael Caesario on 26/06/22.
+//  Created by Michael Caesario on 04/07/22.
 //
 
 import SwiftUI
@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct Aman_Covid_TrackerApp: App {
     @StateObject var viewModel = CovidDataViewModel()
-    
-    var body: some Scene {
+
+    @SceneBuilder var body: some Scene {
         WindowGroup {
+            NavigationView {
                 HomeView()
                     .environmentObject(viewModel)
+            }
         }
     }
 }

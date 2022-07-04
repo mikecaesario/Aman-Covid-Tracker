@@ -28,6 +28,7 @@ struct MediumWidgetView_Previews: PreviewProvider {
 
 extension MediumWidgetView {
     
+    // Left side of the widget that contains new case information, positioned in Z axis with a circle behind it
     var leftSide: some View {
         VStack {
             Spacer()
@@ -55,6 +56,7 @@ extension MediumWidgetView {
         .frame(maxWidth: .infinity)
     }
     
+    // Right side of the widget, containing two piece of data, positioned on vertical axis on top of each other
     var rightSide: some View {
         VStack {
             

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CircleInformation: View {
     // Data model
-    let header: String
-    let subheader: String
+    let data: String
+    let label: String
     
     // Pulsing circle animation
     @State private var isAnimating: Bool = false
@@ -51,19 +51,21 @@ struct CircleInformation: View {
             
             // Data
             VStack(alignment: .center, spacing: 20) {
-                Text(header)
+                Text(data)
                     .font(Font.system(.largeTitle, design: .rounded))
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
-                    .minimumScaleFactor(0.5)
+                    .minimumScaleFactor(0.6)
+                    .lineLimit(1)
                 
-                if header != "Unavailable" {
+                if data != "Unavailable" {
                     
-                    Text(subheader)
+                    Text(label)
                         .font(Font.system(.title3, design: .rounded))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
-                        .minimumScaleFactor(0.5)
+                        .minimumScaleFactor(0.7)
+                        .lineLimit(1)
                 }
             }
         }
@@ -83,6 +85,6 @@ struct CircleInformation: View {
 
 struct CircleInformation_Previews: PreviewProvider {
     static var previews: some View {
-        CircleInformation(header: "+ 1,928", subheader: "NEW CASE")
+        CircleInformation(data: "+ 1,928", label: "NEW CASE")
     }
 }

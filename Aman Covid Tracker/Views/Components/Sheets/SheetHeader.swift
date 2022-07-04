@@ -10,7 +10,7 @@ import SwiftUI
 struct SheetHeader: View {
     var body: some View {
         Capsule()
-            .fill(.black.opacity(0.3))
+            .foregroundColor(.secondary)
             .frame(width: 50, height: 5, alignment: .center)
             .frame(maxWidth: .infinity)
     }

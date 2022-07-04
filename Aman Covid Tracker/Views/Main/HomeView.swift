@@ -10,28 +10,42 @@ import BottomSheet
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: CovidDataViewModel
+    @Environment(\.scenePhase) var scenePhase
     @AppStorage("first_time") var onboardingView: Bool = true
-    @State var splashScreen: Bool = true
+    
+    @State var showSplashScreen: Bool = true
     
     // BottomSheet options
     let bottomSheetOptions: [BottomSheet.Options] = [.disableBottomSafeAreaInsets ,.allowContentDrag, .noDragIndicator, .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: -40), .cornerRadius(25), .noBottomPosition, .animation(.interactiveSpring(response: 0.2, dampingFraction: 0.9))]
-    
-    // Splash screen ransition
-    let transition: AnyTransition = AnyTransition.opacity
+        
+    let toolbarItem: ToolbarItem = ToolbarItem(placement: .navigationBarTrailing) {
+        NavigationLink {
+            SettingsView()
+        } label: {
+            NavigationBarItem(image: "ellipsis")
+        }
+    }
     
     var body: some View {
-        NavigationView{
+        ZStack {
+            CaseView
+            
             ZStack {
-                CaseView
-                
-                if splashScreen {
-                    SplashScreen(splashScreen: $splashScreen)
-                        .transition(transition)
+                if showSplashScreen {
+                    SplashScreen(splashScreen: $showSplashScreen)
                 }
             }
-            .alert(isPresented: $viewModel.showAlert, content: {
-                Alert(title: Text("Error"), message: Text(viewModel.alertMessage ?? "Unknown Error."), dismissButton: .default(Text("OK"))) })
         }
+        .onChange(of: scenePhase, perform: { phase in
+            switch phase {
+            case .active:
+                viewModel.getAllData()
+            default:
+                break
+            }
+        })
+        .alert(isPresented: $viewModel.showAlert, content: {
+            Alert(title: Text("Error"), message: Text(viewModel.alertMessage ?? "Unknown Error."), dismissButton: .default(Text("OK"))) })
     }
 }
 
@@ -40,34 +54,28 @@ struct ContentView_Previews: PreviewProvider {
         HomeView()
             .environmentObject(preview.covidDataViewModel)
         
-//        HomeView()
-//            .preferredColorScheme(.dark)
-//            .environmentObject(preview.covidDataViewModel)
+        HomeView()
+            .preferredColorScheme(.dark)
+            .environmentObject(preview.covidDataViewModel)
     }
 }
 
 extension HomeView {
     
     var CaseView: some View {
-        VStack {
-            CircleInformation(header: viewModel.caseData?.new ?? "Unavailable", subheader: "NEW CASE")
-            
-            // to fill out the spaces and pushing the Circle up below the NavigationTitle, Spacer don't work
-            Rectangle()
-                .fill(.clear)
-        }
-        .navigationTitle(viewModel.caseData?.countryText ?? "Unknown Location")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink {
-                    SettingsView()
-                } label: {
-                    NavigationBarItem(image: "ellipsis")
-                }
+        NavigationView {
+            VStack {
+                CircleInformation(data: viewModel.caseData?.new ?? "Unavailable", label: "NEW CASE")
+                
+                // to fill out the spaces and pushing the Circle up below the NavigationTitle, Spacer don't work
+                Rectangle()
+                    .fill(.clear)
             }
+            .navigationTitle(viewModel.caseData?.countryText ?? "Unknown")
+            .toolbar { toolbarItem }
+            // present on boarding if its the first time the user launch the app
+            .sheet(isPresented: $onboardingView, content: { OnBoardingView() })
+            .bottomSheet(bottomSheetPosition: $viewModel.sheetPosition, options: bottomSheetOptions, headerContent: { SheetHeader() }) { SheetScrollview().environmentObject(viewModel).ignoresSafeArea() }
         }
-        // present on boarding if its the first time the user launch the app
-        .sheet(isPresented: $onboardingView, content: { OnBoardingView() })
-        .bottomSheet(bottomSheetPosition: $viewModel.sheetPosition, options: bottomSheetOptions, headerContent: { SheetHeader() }) { SheetScrollview().environmentObject(viewModel).ignoresSafeArea() }
     }
 }

@@ -10,8 +10,7 @@ import SwiftUI
 struct SheetScrollview: View {
     @EnvironmentObject var viewModel: CovidDataViewModel
     
-    let caseUnavailable: String = "Unavailable"
-    let vaccineUnavailable: Int = 0
+    let dataUnavailable: String = "Unavailable"
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -19,6 +18,7 @@ struct SheetScrollview: View {
                 topCell
                 caseCell
                 vaccinationCell
+                refreshButton
             }
             .padding(.vertical)
         }
@@ -36,8 +36,8 @@ extension SheetScrollview {
     
     var topCell: some View {
         HStack(spacing: 15) {
-            SheetTopCell(title: "Active Case", data: viewModel.caseData?.active ?? caseUnavailable, padding: true, loading: viewModel.isLoading)
-            SheetTopCell(title: "Newly Deceased", data: viewModel.caseData?.newDeath ?? caseUnavailable, padding: false, loading: viewModel.isLoading)
+            SheetTopCell(title: "Active Case", data: viewModel.caseData?.active ?? dataUnavailable, padding: true, loading: viewModel.caseLoading)
+            SheetTopCell(title: "Newly Deceased", data: viewModel.caseData?.newDeath ?? dataUnavailable, padding: false, loading: viewModel.caseLoading)
         }
     }
     
@@ -49,15 +49,16 @@ extension SheetScrollview {
                 .fontWeight(.bold)
                 .padding(.bottom)
             
-            SheetListItem(title: "Total Case", data: viewModel.caseData?.totalCasesText ?? caseUnavailable, loading: viewModel.isLoading)
+            SheetListItem(title: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, loading: viewModel.caseLoading)
             
             Divider()
             
-            SheetListItem(title: "Total Recovered", data: viewModel.caseData?.totalRecoveredText ?? caseUnavailable, loading: viewModel.isLoading)
+            SheetListItem(title: "Total Recovered", data: viewModel.caseData?.totalRecoveredText ?? dataUnavailable, loading: viewModel.caseLoading)
             
             Divider()
 
-            SheetListItem(title: "Total Deceased", data: viewModel.caseData?.totalDeathsText ?? caseUnavailable, loading: viewModel.isLoading)
+            SheetListItem(title: "Total Deceased", data: viewModel.caseData?.totalDeathsText ?? dataUnavailable, loading: viewModel.caseLoading)
+            
         }
         .padding()
         .background(SheetBackground())
@@ -72,18 +73,27 @@ extension SheetScrollview {
                 .fontWeight(.bold)
                 .padding(.bottom)
             
-            SheetListItem(title: "Fully Vaccinated", data: String(viewModel.vaccineData?.all.peopleVaccinated ?? vaccineUnavailable), loading: viewModel.isLoading)
+            SheetListItem(title: "Fully Vaccinated", data: viewModel.vaccineData?.all.vaccinated ?? dataUnavailable, loading: viewModel.vaccineLoading)
             
             Divider()
             
-            SheetListItem(title: "Partially Vaccinated", data: String(viewModel.vaccineData?.all.peoplePartiallyVaccinated ?? vaccineUnavailable), loading: viewModel.isLoading)
+            SheetListItem(title: "Partially Vaccinated", data: viewModel.vaccineData?.all.partialVaccinated ?? dataUnavailable, loading: viewModel.vaccineLoading)
             
             Divider()
             
-            SheetListItem(title: "Total Administered", data: String(viewModel.vaccineData?.all.administered ?? vaccineUnavailable), loading: viewModel.isLoading)
+            SheetListItem(title: "Total Administered", data: viewModel.vaccineData?.all.admin ?? dataUnavailable, loading: viewModel.vaccineLoading)
         }
         .padding()
         .background(SheetBackground())
         .padding(.horizontal)
+    }
+    
+    var refreshButton: some View {
+        Button {
+            viewModel.getAllData()
+        } label: {
+            MainButton(title: "Refresh")
+                .padding(.bottom)
+        }
     }
 }
