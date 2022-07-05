@@ -25,8 +25,8 @@ class CovidDataViewModel: ObservableObject {
     
     #warning("WARNING! fill in valid URL before running the app.")
     
-    
-    
+    let caseURL = URL(string: "https://covid-19.dataflowkit.com/v1/indonesia")
+    let vaccineURL = URL(string: "https://covid-api.mmediagroup.fr/v1/vaccines?country=Indonesia")
     
     enum sheetSizes: CGFloat, CaseIterable {
         case top = 0.8, middle = 0.5
@@ -44,18 +44,17 @@ class CovidDataViewModel: ObservableObject {
         // remove the data from the publisher
         self.caseData = nil
         self.vaccineData = nil
-
-        #warning("DispatchQueue Async After is ONLY for testing purposes, remove after testing")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
-            do {
-                // try to fetch the data
-                try self?.getCase()
-                try self?.getVaccine()
-            } catch {
-                // if fails, present an error based on throwing APIError
-                self?.showAlert = true
-                self?.alertMessage = error.localizedDescription
-            }
+        
+        do {
+            
+            // try to fetch the data
+            try getCase()
+            try getVaccine()
+        } catch(let error) {
+            
+            // if fails, present an error based on throwing APIError
+            self.showAlert = true
+            self.alertMessage = error.localizedDescription
         }
     }
     

@@ -45,6 +45,7 @@ extension MediumWidgetView {
                 .font(.caption2)
                 .fontWeight(.medium)
                 .foregroundColor(.white)
+                .unredacted()
             
             Spacer()
 
@@ -69,6 +70,7 @@ extension MediumWidgetView {
             Text("Active Case")
                 .font(.caption2)
                 .foregroundColor(.secondary)
+                .unredacted()
             
             Divider()
             
@@ -81,6 +83,7 @@ extension MediumWidgetView {
             Text("Newly Deceased")
                 .font(.caption2)
                 .foregroundColor(.secondary)
+                .unredacted()
         }
         .padding(10)
         .background(RoundedRectangle(cornerRadius: 17, style: .continuous)

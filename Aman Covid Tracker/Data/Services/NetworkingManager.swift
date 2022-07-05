@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class NetworkingManager {
+struct NetworkingManager {
     
     static func downloadData(url: URL) ->  AnyPublisher<Data, Error> {
         return URLSession.shared.dataTaskPublisher(for: url)

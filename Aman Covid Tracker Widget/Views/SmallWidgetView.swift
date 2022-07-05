@@ -45,5 +45,6 @@ extension SmallWidgetView {
             .font(.footnote)
             .fontWeight(.regular)
             .foregroundColor(.secondary)
+            .unredacted()
     }
 }
