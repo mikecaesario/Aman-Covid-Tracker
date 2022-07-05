@@ -38,7 +38,6 @@
 		4C30A058286F412900C3EA32 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A057286F412900C3EA32 /* UIApplication.swift */; };
 		4C30A05A2870953300C3EA32 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0592870953200C3EA32 /* Entry.swift */; };
 		4C30A05C2870957D00C3EA32 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A05B2870957C00C3EA32 /* Provider.swift */; };
-		4C30A05E287095BA00C3EA32 /* WidgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A05D287095BA00C3EA32 /* WidgetService.swift */; };
 		4C30A0642870968C00C3EA32 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0632870968C00C3EA32 /* WidgetView.swift */; };
 		4C30A0662870974900C3EA32 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0652870974900C3EA32 /* SmallWidgetView.swift */; };
 		4C30A06828709B3E00C3EA32 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A06728709B3E00C3EA32 /* Color.swift */; };
@@ -164,7 +163,6 @@
 		4C30A057286F412900C3EA32 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		4C30A0592870953200C3EA32 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		4C30A05B2870957C00C3EA32 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		4C30A05D287095BA00C3EA32 /* WidgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetService.swift; sourceTree = "<group>"; };
 		4C30A0632870968C00C3EA32 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		4C30A0652870974900C3EA32 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		4C30A06728709B3E00C3EA32 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -406,7 +404,6 @@
 			children = (
 				4C30A05B2870957C00C3EA32 /* Provider.swift */,
 				4C30A0592870953200C3EA32 /* Entry.swift */,
-				4C30A05D287095BA00C3EA32 /* WidgetService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -717,7 +714,6 @@
 				4C30A05C2870957D00C3EA32 /* Provider.swift in Sources */,
 				4C30A06828709B3E00C3EA32 /* Color.swift in Sources */,
 				4C30A03D286B5E1400C3EA32 /* Aman_Covid_Tracker_Widget.swift in Sources */,
-				4C30A05E287095BA00C3EA32 /* WidgetService.swift in Sources */,
 				4C30A0662870974900C3EA32 /* SmallWidgetView.swift in Sources */,
 				4C30A0642870968C00C3EA32 /* WidgetView.swift in Sources */,
 				4C30A0AD287212A800C3EA32 /* APIError.swift in Sources */,
