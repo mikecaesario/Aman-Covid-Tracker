@@ -12,6 +12,7 @@ struct SheetBackground: View {
         RoundedRectangle(cornerRadius: 20, style: .continuous)
             .fill(Color.main.sheetBackgroundColor)
             .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 0)
+            .accessibilityHidden(true)
     }
 }
 

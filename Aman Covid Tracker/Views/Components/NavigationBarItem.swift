@@ -15,6 +15,8 @@ struct NavigationBarItem: View {
             .foregroundColor(.accentColor)
             .padding(8)
             .background(Circle().fill(Color.accentColor.opacity(0.3)))
+            .accessibilityLabel("More Info")
+            .accessibilityAddTraits(.isButton)
     }
 }
 

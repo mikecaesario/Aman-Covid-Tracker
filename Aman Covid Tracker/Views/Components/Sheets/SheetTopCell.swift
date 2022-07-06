@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SheetTopCell: View {
-    let title: String
+    let label: String
     let data: String
     let padding: Bool
     let loading: Bool
@@ -21,12 +21,13 @@ struct SheetTopCell: View {
         .frame(maxWidth: .infinity)
         .background(SheetBackground())
         .padding(padding ? .leading : .trailing)
+        .accessibilityLabel(label + data)
     }
 }
 
 struct SheetInformationCell_Previews: PreviewProvider {
     static var previews: some View {
-        SheetTopCell(title: "Total Cases", data: "6,000,000", padding: true, loading: true)
+        SheetTopCell(label: "Total Cases", data: "6,000,000", padding: true, loading: true)
             .previewLayout(.sizeThatFits)
     }
 }
@@ -49,7 +50,7 @@ extension SheetTopCell {
                 Spacer()
                     .frame(height: 40)
                 
-                Text(title)
+                Text(label)
                     .font(.footnote)
                     .fontWeight(.medium)
                     .foregroundColor(.secondary)

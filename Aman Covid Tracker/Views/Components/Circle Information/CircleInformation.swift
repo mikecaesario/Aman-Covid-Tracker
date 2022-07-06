@@ -68,6 +68,7 @@ struct CircleInformation: View {
                         .lineLimit(1)
                 }
             }
+            .accessibilityLabel(label + data)
         }
         .padding(20)
         .onAppear {

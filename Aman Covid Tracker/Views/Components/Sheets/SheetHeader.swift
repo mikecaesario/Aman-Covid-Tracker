@@ -13,6 +13,7 @@ struct SheetHeader: View {
             .foregroundColor(.secondary)
             .frame(width: 50, height: 5, alignment: .center)
             .frame(maxWidth: .infinity)
+            .accessibilityHidden(true)
     }
 }
 

@@ -43,13 +43,13 @@ extension OnBoardingView {
     private var onboardingContent: some View {
         VStack(alignment: .leading, spacing: 10) {
             OnBoardingContentCell(image: "exclamationmark.triangle",
-                              title: "Track Covid Case",
+                              label: "Track Covid Case",
                               content: "Get the latest Covid data")
             OnBoardingContentCell(image: "square.stack",
-                              title: "Covid Case Breakdown",
+                              label: "Covid Case Breakdown",
                               content: "Get more detailed Covid information based on Province")
             OnBoardingContentCell(image: "eye",
-                              title: "Information at a Glance",
+                              label: "Information at a Glance",
                               content: "Easily access information on the Homescreen with Widgets")
         }
         .frame(maxWidth: .infinity, alignment: .center)
@@ -60,7 +60,7 @@ extension OnBoardingView {
         Button {
             self.OnBoardingView = false
         } label: {
-            MainButton(title: "Continue")
+            MainButton(label: "Continue")
                 .padding()
                 .padding(.bottom)
         }

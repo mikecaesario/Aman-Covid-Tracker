@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SheetListItem: View {
-    let title: String
+    let label: String
     let data: String
     let loading: Bool
     
@@ -23,18 +23,19 @@ struct SheetListItem: View {
                 .redacted(reason: loading ? .placeholder : [])
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text(title)
+            Text(label)
                 .font(.footnote)
                 .fontWeight(.regular)
                 .foregroundColor(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .accessibilityLabel(label + data)
     }
 }
 
 struct SheetGridItem_Previews: PreviewProvider {
     static var previews: some View {
-        SheetListItem(title: "Deceased", data: "+ 104", loading: false)
+        SheetListItem(label: "Deceased", data: "+ 104", loading: false)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -37,9 +37,8 @@ struct CaseModel: Codable {
         case totalRecoveredText = "Total Recovered_text"
     }
     
-    // Sometimes the data returned as an empty string, use the property below to avoid empty data showing on the UI
-    
-    var active: String {
+    // Sometimes the data returned as an empty string, use the property below to avoid empty data showing inside the UI
+        var active: String {
         if activeCasesText == "" {
             return "Unavailable"
         } else {

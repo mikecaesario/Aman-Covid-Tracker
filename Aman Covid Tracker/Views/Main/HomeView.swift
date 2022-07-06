@@ -18,6 +18,7 @@ struct HomeView: View {
     // BottomSheet options
     let bottomSheetOptions: [BottomSheet.Options] = [.disableBottomSafeAreaInsets ,.allowContentDrag, .noDragIndicator, .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: -40), .cornerRadius(25), .noBottomPosition, .animation(.interactiveSpring(response: 0.2, dampingFraction: 0.9))]
         
+    // Toolbar items for navigation buttons to push Settings View
     let toolbarItem: ToolbarItem = ToolbarItem(placement: .navigationBarTrailing) {
         NavigationLink {
             SettingsView()
@@ -30,6 +31,7 @@ struct HomeView: View {
         ZStack {
             CaseView
             
+            // Show SplashScreen when the app runs
             ZStack {
                 if showSplashScreen {
                     SplashScreen(splashScreen: $showSplashScreen)
@@ -37,6 +39,8 @@ struct HomeView: View {
             }
         }
         .onChange(of: scenePhase, perform: { phase in
+            
+            // Get 
             switch phase {
             case .active:
                 viewModel.getAllData()

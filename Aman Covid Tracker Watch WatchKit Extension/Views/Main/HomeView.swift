@@ -14,18 +14,21 @@ struct HomeView: View {
     let dataUnavailable: String = "Unavailable"
     
     var body: some View {
-        TabView {
-            newCaseView
-            caseView
+        VStack{
+            Text("hello")
         }
-        .onChange(of: scenePhase) { phase in
-            switch phase {
-            case .active:
-                viewModel.getAllData()
-            default:
-                break
-            }
-        }
+//        TabView {
+//            newCaseView
+//            caseView
+//        }
+//        .onChange(of: scenePhase) { phase in
+//            switch phase {
+//            case .active:
+//                viewModel.getAllData()
+//            default:
+//                break
+//            }
+//        }
     }
 }
 

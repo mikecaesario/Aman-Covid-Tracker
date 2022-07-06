@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct MainButton: View {
-    let title: String
+    let label: String
     
     var body: some View {
-        Text(title)
+        Text(label)
             .fontWeight(.bold)
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
@@ -20,12 +20,14 @@ struct MainButton: View {
                     .fill(Color.accentColor)
                     .frame(height: 50)
             )
+            .accessibilityLabel(label)
+            .accessibilityAddTraits(.isButton)
             .padding()
     }
 }
 
 struct MainButton_Previews: PreviewProvider {
     static var previews: some View {
-        MainButton(title: "Continue")
+        MainButton(label: "Continue")
     }
 }

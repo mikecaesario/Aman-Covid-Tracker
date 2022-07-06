@@ -23,7 +23,7 @@ class CovidDataViewModel: ObservableObject {
     var caseDataSubscription: AnyCancellable?
     var vaccineDataSubscription: AnyCancellable?
     
-    #warning("WARNING! fill in valid URL before running the app.")
+    #warning("WARNING! fill in a valid URL before running the app.")
     
     let caseURL = URL(string: "https://covid-19.dataflowkit.com/v1/indonesia")
     let vaccineURL = URL(string: "https://covid-api.mmediagroup.fr/v1/vaccines?country=Indonesia")

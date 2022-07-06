@@ -51,7 +51,7 @@
 		4C30A08A28720A0600C3EA32 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A08928720A0600C3EA32 /* ComplicationController.swift */; };
 		4C30A08C28720A0700C3EA32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C30A08B28720A0700C3EA32 /* Assets.xcassets */; };
 		4C30A08F28720A0700C3EA32 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C30A08E28720A0700C3EA32 /* Preview Assets.xcassets */; };
-		4C30A09428720A0700C3EA32 /* Aman Covid Tracker Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4C30A07428720A0300C3EA32 /* Aman Covid Tracker Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4C30A09428720A0700C3EA32 /* Aman Covid Tracker.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4C30A07428720A0300C3EA32 /* Aman Covid Tracker.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4C30A09D28720A8F00C3EA32 /* CovidDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C309FFE2867D46900C3EA32 /* CovidDataViewModel.swift */; };
 		4C30A09E28720A9200C3EA32 /* CovidDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C309FFE2867D46900C3EA32 /* CovidDataViewModel.swift */; };
 		4C30A09F28720A9800C3EA32 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A00D2867DBC200C3EA32 /* NetworkingManager.swift */; };
@@ -123,7 +123,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				4C30A09428720A0700C3EA32 /* Aman Covid Tracker Watch.app in Embed Watch Content */,
+				4C30A09428720A0700C3EA32 /* Aman Covid Tracker.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,7 +131,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4C309FEB2867D41D00C3EA32 /* Aman: Covid Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aman: Covid Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C309FEB2867D41D00C3EA32 /* Aman Covid Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aman Covid Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C309FEE2867D41D00C3EA32 /* Aman_Covid_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aman_Covid_TrackerApp.swift; sourceTree = "<group>"; };
 		4C309FF02867D41D00C3EA32 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4C309FF22867D41F00C3EA32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		4C30A06A28709C5800C3EA32 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
 		4C30A06C2871F44300C3EA32 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		4C30A0702871FC3800C3EA32 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		4C30A07428720A0300C3EA32 /* Aman Covid Tracker Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aman Covid Tracker Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C30A07428720A0300C3EA32 /* Aman Covid Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aman Covid Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C30A07628720A0600C3EA32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C30A07C28720A0600C3EA32 /* Aman Covid Tracker Watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Aman Covid Tracker Watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C30A08128720A0600C3EA32 /* Aman_Covid_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aman_Covid_TrackerApp.swift; sourceTree = "<group>"; };
@@ -225,9 +225,9 @@
 		4C309FEC2867D41D00C3EA32 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C309FEB2867D41D00C3EA32 /* Aman: Covid Tracker.app */,
+				4C309FEB2867D41D00C3EA32 /* Aman Covid Tracker.app */,
 				4C30A035286B5E1400C3EA32 /* Aman Covid Tracker WidgetExtension.appex */,
-				4C30A07428720A0300C3EA32 /* Aman Covid Tracker Watch.app */,
+				4C30A07428720A0300C3EA32 /* Aman Covid Tracker.app */,
 				4C30A07C28720A0600C3EA32 /* Aman Covid Tracker Watch WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -529,7 +529,7 @@
 				4C30A01B2868C1B600C3EA32 /* BottomSheet */,
 			);
 			productName = "Aman Covid Tracker";
-			productReference = 4C309FEB2867D41D00C3EA32 /* Aman: Covid Tracker.app */;
+			productReference = 4C309FEB2867D41D00C3EA32 /* Aman Covid Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4C30A034286B5E1400C3EA32 /* Aman Covid Tracker WidgetExtension */ = {
@@ -563,7 +563,7 @@
 			);
 			name = "Aman Covid Tracker Watch";
 			productName = "Aman Covid Tracker Watch";
-			productReference = 4C30A07428720A0300C3EA32 /* Aman Covid Tracker Watch.app */;
+			productReference = 4C30A07428720A0300C3EA32 /* Aman Covid Tracker.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		4C30A07B28720A0600C3EA32 /* Aman Covid Tracker Watch WatchKit Extension */ = {
@@ -899,7 +899,7 @@
 				);
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.mikecaesario.Aman-Covid-Tracker";
-				PRODUCT_NAME = "Aman: Covid Tracker";
+				PRODUCT_NAME = "Aman Covid Tracker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -931,7 +931,7 @@
 				);
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.mikecaesario.Aman-Covid-Tracker";
-				PRODUCT_NAME = "Aman: Covid Tracker";
+				PRODUCT_NAME = "Aman Covid Tracker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1067,12 +1067,11 @@
 				DEVELOPMENT_TEAM = KYXA735EC5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Aman_Covid_Tracker_Watch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "Aman Covid Tracker Watch";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "app.mikecaesario.Aman-Covid-Tracker";
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.mikecaesario.Aman-Covid-Tracker.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Aman Covid Tracker";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1093,12 +1092,11 @@
 				DEVELOPMENT_TEAM = KYXA735EC5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Aman_Covid_Tracker_Watch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "Aman Covid Tracker Watch";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "app.mikecaesario.Aman-Covid-Tracker";
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.mikecaesario.Aman-Covid-Tracker.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Aman Covid Tracker";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

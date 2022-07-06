@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnBoardingContentCell: View {
     let image: String
-    let title: String
+    let label: String
     let content: String
     
     var body: some View {
@@ -20,7 +20,7 @@ struct OnBoardingContentCell: View {
                 .frame(width: 50, height: 50)
 
             VStack(alignment: .leading, spacing: 5) {
-                Text(title)
+                Text(label)
                     .font(.subheadline)
                     .fontWeight(.bold)
                 
@@ -31,13 +31,14 @@ struct OnBoardingContentCell: View {
             }
             .padding(.leading, 10)
             .padding(5)
+            .accessibilityLabel(label + content)
         }
     }
 }
 
 struct OnBoardingContentCell_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingContentCell(image: "exclamationmark.triangle", title: "Get Information at a Glance", content: "Get the latest Covid data officially from the government.")
+        OnBoardingContentCell(image: "exclamationmark.triangle", label: "Get Information at a Glance", content: "Get the latest Covid data officially from the government.")
             .previewLayout(.sizeThatFits)
     }
 }

@@ -36,8 +36,8 @@ extension SheetScrollview {
     
     var topCell: some View {
         HStack(spacing: 15) {
-            SheetTopCell(title: "Active Case", data: viewModel.caseData?.active ?? dataUnavailable, padding: true, loading: viewModel.caseLoading)
-            SheetTopCell(title: "Newly Deceased", data: viewModel.caseData?.newDeath ?? dataUnavailable, padding: false, loading: viewModel.caseLoading)
+            SheetTopCell(label: "Active Case", data: viewModel.caseData?.active ?? dataUnavailable, padding: true, loading: viewModel.caseLoading)
+            SheetTopCell(label: "Newly Deceased", data: viewModel.caseData?.newDeath ?? dataUnavailable, padding: false, loading: viewModel.caseLoading)
         }
     }
     
@@ -49,15 +49,15 @@ extension SheetScrollview {
                 .fontWeight(.bold)
                 .padding(.bottom)
             
-            SheetListItem(title: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, loading: viewModel.caseLoading)
+            SheetListItem(label: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, loading: viewModel.caseLoading)
             
             Divider()
             
-            SheetListItem(title: "Total Recovered", data: viewModel.caseData?.totalRecoveredText ?? dataUnavailable, loading: viewModel.caseLoading)
+            SheetListItem(label: "Total Recovered", data: viewModel.caseData?.totalRecoveredText ?? dataUnavailable, loading: viewModel.caseLoading)
             
             Divider()
 
-            SheetListItem(title: "Total Deceased", data: viewModel.caseData?.totalDeathsText ?? dataUnavailable, loading: viewModel.caseLoading)
+            SheetListItem(label: "Total Deceased", data: viewModel.caseData?.totalDeathsText ?? dataUnavailable, loading: viewModel.caseLoading)
             
         }
         .padding()
@@ -73,15 +73,15 @@ extension SheetScrollview {
                 .fontWeight(.bold)
                 .padding(.bottom)
             
-            SheetListItem(title: "Fully Vaccinated", data: viewModel.vaccineData?.all.vaccinated ?? dataUnavailable, loading: viewModel.vaccineLoading)
+            SheetListItem(label: "Fully Vaccinated", data: viewModel.vaccineData?.all.vaccinated ?? dataUnavailable, loading: viewModel.vaccineLoading)
             
             Divider()
             
-            SheetListItem(title: "Partially Vaccinated", data: viewModel.vaccineData?.all.partialVaccinated ?? dataUnavailable, loading: viewModel.vaccineLoading)
+            SheetListItem(label: "Partially Vaccinated", data: viewModel.vaccineData?.all.partialVaccinated ?? dataUnavailable, loading: viewModel.vaccineLoading)
             
             Divider()
             
-            SheetListItem(title: "Total Administered", data: viewModel.vaccineData?.all.admin ?? dataUnavailable, loading: viewModel.vaccineLoading)
+            SheetListItem(label: "Total Administered", data: viewModel.vaccineData?.all.admin ?? dataUnavailable, loading: viewModel.vaccineLoading)
         }
         .padding()
         .background(SheetBackground())
@@ -92,7 +92,7 @@ extension SheetScrollview {
         Button {
             viewModel.getAllData()
         } label: {
-            MainButton(title: "Refresh")
+            MainButton(label: "Refresh")
                 .padding(.bottom)
         }
     }

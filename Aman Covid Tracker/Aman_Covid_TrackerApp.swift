@@ -15,6 +15,7 @@ struct Aman_Covid_TrackerApp: App {
         WindowGroup {
                 HomeView()
                     .environmentObject(viewModel)
+                    .onAppear { UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable") }
         }
     }
 }
