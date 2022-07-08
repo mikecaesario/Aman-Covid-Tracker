@@ -54,6 +54,5 @@ struct CovidCaseEntry: TimelineEntry {
         }
         
         static let previewData = CaseData(activeCasesText: "10,000", countryText: "Indonesia", lastUpdate: "2022-03-14 18:00", newCasesText: "+ 21,311", newDeathsText: "20", totalCasesText: "5,800,000", totalDeathsText: "150,000", totalRecoveredText: "5,650,000")
-//        static let error = CaseData(activeCasesText: "N/A", countryText: "N/A", lastUpdate: "N/A", newCasesText: "N/A", newDeathsText: "N/A", totalCasesText: "N/A", totalDeathsText: "N/A", totalRecoveredText: "N/A")
     }
 }

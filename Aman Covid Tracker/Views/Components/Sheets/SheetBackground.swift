@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SheetBackground: View {
+    
+    // MARK: - View
+
     var body: some View {
         RoundedRectangle(cornerRadius: 20, style: .continuous)
             .fill(Color.main.sheetBackgroundColor)
@@ -15,6 +18,8 @@ struct SheetBackground: View {
             .accessibilityHidden(true)
     }
 }
+
+// MARK: - Previews
 
 struct SheetBackground_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct NavigationBarItem: View {
+    
+    // MARK: - Property
+
     let image: String
     
+    // MARK: - View
+
     var body: some View {
         Text(Image(systemName: image))
             .foregroundColor(.accentColor)
@@ -19,6 +24,8 @@ struct NavigationBarItem: View {
             .accessibilityAddTraits(.isButton)
     }
 }
+
+// MARK: - Previews
 
 struct NavigationBarItem_Previews: PreviewProvider {
     static var previews: some View {

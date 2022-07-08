@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct MainButton: View {
+    
+    // MARK: - Property
+
     let label: String
+    
+    // MARK: - View
     
     var body: some View {
         Text(label)
@@ -25,6 +30,8 @@ struct MainButton: View {
             .padding()
     }
 }
+
+// MARK: - Previews
 
 struct MainButton_Previews: PreviewProvider {
     static var previews: some View {

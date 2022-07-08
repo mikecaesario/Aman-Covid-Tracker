@@ -9,7 +9,12 @@ import WidgetKit
 import SwiftUI
 
 struct MediumWidgetView: View {
+    
+    // MARK: - Property
+
     var entry: Provider.Entry
+
+    // MARK: - View
 
     var body: some View {
         HStack {
@@ -19,6 +24,8 @@ struct MediumWidgetView: View {
     }
 }
 
+// MARK: - Previews
+
 struct MediumWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         MediumWidgetView(entry: CovidCaseEntry(date: Date(), error: false, cases: .previewData))
@@ -26,10 +33,12 @@ struct MediumWidgetView_Previews: PreviewProvider {
     }
 }
 
+// MARK: - View Extension
+
 extension MediumWidgetView {
     
-    // Left side of the widget that contains new case information, positioned in Z axis with a circle behind it
-    var leftSide: some View {
+    // Left side of the widget, contains new case information, positioned in Z axis with a circle behind it
+    private var leftSide: some View {
         VStack {
             Spacer()
             
@@ -57,8 +66,8 @@ extension MediumWidgetView {
         .frame(maxWidth: .infinity)
     }
     
-    // Right side of the widget, containing two piece of data, positioned on vertical axis on top of each other
-    var rightSide: some View {
+    // Right side of the widget, contains two piece of information, positioned on vertical axis on top of each other
+    private var rightSide: some View {
         VStack {
             
             Text(entry.cases.active)

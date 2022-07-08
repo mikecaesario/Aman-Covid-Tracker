@@ -9,7 +9,12 @@ import WidgetKit
 import SwiftUI
 
 struct SmallWidgetView: View {
+    
+    // MARK: - Property
+
     var entry: Provider.Entry
+
+    // MARK: - View
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,12 +28,16 @@ struct SmallWidgetView: View {
     }
 }
 
+// MARK: - Previews
+
 struct SmallWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         SmallWidgetView(entry: CovidCaseEntry(date: Date(), error: false, cases: .previewData))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
+
+// MARK: - View Extension
 
 extension SmallWidgetView {
     

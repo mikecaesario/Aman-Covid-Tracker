@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct CircleInformation: View {
-    // Data model
+    
+    // MARK: - Property
+
     let data: String
     let label: String
     
@@ -16,6 +18,8 @@ struct CircleInformation: View {
     @State private var isAnimating: Bool = false
     @State private var opacityAnimation: CGFloat = 1
     
+    // MARK: - View
+
     var body: some View {
         ZStack {
             
@@ -83,6 +87,8 @@ struct CircleInformation: View {
         }
     }
 }
+
+// MARK: - Previews
 
 struct CircleInformation_Previews: PreviewProvider {
     static var previews: some View {

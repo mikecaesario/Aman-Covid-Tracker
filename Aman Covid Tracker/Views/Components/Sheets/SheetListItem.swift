@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct SheetListItem: View {
+    
+    // MARK: - Property
+
     let label: String
     let data: String
     let loading: Bool
     
+    // MARK: - View
+
     var body: some View {
         VStack(spacing: 5) {
             Text(data)
@@ -32,6 +37,8 @@ struct SheetListItem: View {
         .accessibilityLabel(label + data)
     }
 }
+
+// MARK: - Previews
 
 struct SheetGridItem_Previews: PreviewProvider {
     static var previews: some View {

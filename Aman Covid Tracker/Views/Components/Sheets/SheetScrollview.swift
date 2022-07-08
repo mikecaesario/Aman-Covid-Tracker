@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct SheetScrollview: View {
+    
+    // MARK: - Property
+
     @EnvironmentObject var viewModel: CovidDataViewModel
     
     let dataUnavailable: String = "Unavailable"
+    
+    // MARK: - View
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -25,6 +30,8 @@ struct SheetScrollview: View {
     }
 }
 
+// MARK: - Previews
+
 struct SheetScrollview_Previews: PreviewProvider {
     static var previews: some View {
         SheetScrollview()
@@ -32,16 +39,18 @@ struct SheetScrollview_Previews: PreviewProvider {
     }
 }
 
+// MARK: - View Extension
+
 extension SheetScrollview {
     
-    var topCell: some View {
+    private var topCell: some View {
         HStack(spacing: 15) {
             SheetTopCell(label: "Active Case", data: viewModel.caseData?.active ?? dataUnavailable, padding: true, loading: viewModel.caseLoading)
             SheetTopCell(label: "Newly Deceased", data: viewModel.caseData?.newDeath ?? dataUnavailable, padding: false, loading: viewModel.caseLoading)
         }
     }
     
-    var caseCell: some View {
+    private var caseCell: some View {
         VStack(alignment: .leading, spacing: 10) {
             
             Text("Cases")
@@ -65,7 +74,7 @@ extension SheetScrollview {
         .padding(.horizontal)
     }
     
-    var vaccinationCell: some View {
+    private var vaccinationCell: some View {
         VStack(alignment: .leading, spacing: 10) {
             
             Text("Vaccination")
@@ -88,7 +97,7 @@ extension SheetScrollview {
         .padding(.horizontal)
     }
     
-    var refreshButton: some View {
+    private var refreshButton: some View {
         Button {
             viewModel.getAllData()
         } label: {

@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct OnBoardingView: View {
+    
+    // MARK: - Property
+
     @AppStorage("first_time") var OnBoardingView: Bool = true
     
     let onBoardingHeader: String = "Welcome to Aman"
+
+    // MARK: - View
 
     var body: some View {
         VStack {
@@ -24,6 +29,8 @@ struct OnBoardingView: View {
     }
 }
 
+// MARK: - Previews
+
 struct OnBoardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnBoardingView()
@@ -32,6 +39,8 @@ struct OnBoardingView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+
+// MARK: - View Extension
 
 extension OnBoardingView {
     private var onboardingTitle: some View {

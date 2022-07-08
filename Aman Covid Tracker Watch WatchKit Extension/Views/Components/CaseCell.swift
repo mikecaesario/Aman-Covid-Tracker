@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct CaseCell: View {
+    
+    // MARK: - Property
+
     let label: String
     let data: String
     let divide: Bool
     let loading: Bool
     
+    // MARK: - View
+
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -37,6 +42,8 @@ struct CaseCell: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
+
+// MARK: - Previews
 
 struct caseCell_Previews: PreviewProvider {
     static var previews: some View {

@@ -9,9 +9,14 @@ import WidgetKit
 import Combine
 
 class Provider: TimelineProvider {
+    
+    // MARK: - Property
+
     let caseURL = URL(string: "https://covid-19.dataflowkit.com/v1/indonesia")
     var caseDataSubscription: AnyCancellable?
     
+    // MARK: - Combine Functions
+
     func createTimelineEntry(date: Date, completion: @escaping (CovidCaseEntry) -> ()) {
         guard let url = caseURL else { return }
 
@@ -39,6 +44,8 @@ class Provider: TimelineProvider {
                 completion(timeline)
             })
     }
+
+    // MARK: - Widget Functions
 
     func placeholder(in context: Context) -> CovidCaseEntry {
         CovidCaseEntry(date: Date(), error: false, cases: .previewData)

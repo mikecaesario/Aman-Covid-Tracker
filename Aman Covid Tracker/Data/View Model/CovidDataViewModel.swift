@@ -22,9 +22,7 @@ class CovidDataViewModel: ObservableObject {
     
     var caseDataSubscription: AnyCancellable?
     var vaccineDataSubscription: AnyCancellable?
-    
-    #warning("WARNING! fill in a valid URL before running the app.")
-    
+        
     let caseURL = URL(string: "https://covid-19.dataflowkit.com/v1/indonesia")
     let vaccineURL = URL(string: "https://covid-api.mmediagroup.fr/v1/vaccines?country=Indonesia")
     
@@ -35,6 +33,8 @@ class CovidDataViewModel: ObservableObject {
     init() {
         getAllData()
     }
+    
+    // MARK: - Functions
     
     func getAllData() {
         // send back the UI components to redacted

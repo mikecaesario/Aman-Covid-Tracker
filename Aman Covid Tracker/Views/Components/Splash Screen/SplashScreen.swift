@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SplashScreen: View {
+    
+    // MARK: - Property
+
     @Binding var splashScreen: Bool
         
+    // MARK: - View
+
     var body: some View {
         ZStack {
             Color.main.accentColor.ignoresSafeArea()
@@ -28,15 +33,19 @@ struct SplashScreen: View {
     }
 }
 
+// MARK: - Previews
+
 struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
         SplashScreen(splashScreen: .constant(true))
     }
 }
 
+// MARK: - View Extension
+
 extension SplashScreen {
     
-    var splashScreenImage: some View {
+    private var splashScreenImage: some View {
         Image("AmanLogo")
             .resizable()
             .scaledToFit()
@@ -45,7 +54,7 @@ extension SplashScreen {
             .frame(maxWidth: .infinity, alignment: .center)
     }
     
-    var splashScreenInfo: some View {
+    private var splashScreenInfo: some View {
         Text("Version " + (UIApplication.appVersion ?? "0"))
             .font(.footnote)
             .foregroundColor(.white)

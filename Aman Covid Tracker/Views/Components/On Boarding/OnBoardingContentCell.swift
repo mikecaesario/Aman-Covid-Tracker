@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct OnBoardingContentCell: View {
+    
+    // MARK: - Property
+
     let image: String
     let label: String
     let content: String
     
+    // MARK: - View
+
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
             Image(systemName: image)
@@ -35,6 +40,8 @@ struct OnBoardingContentCell: View {
         }
     }
 }
+
+// MARK: - Previews
 
 struct OnBoardingContentCell_Previews: PreviewProvider {
     static var previews: some View {

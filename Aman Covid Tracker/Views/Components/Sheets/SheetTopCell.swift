@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct SheetTopCell: View {
+    
+    // MARK: - Property
+
     let label: String
     let data: String
     let padding: Bool
     let loading: Bool
         
+    // MARK: - View
+
     var body: some View {
         VStack(spacing: 10) {
             header
@@ -25,6 +30,8 @@ struct SheetTopCell: View {
     }
 }
 
+// MARK: - Previews
+
 struct SheetInformationCell_Previews: PreviewProvider {
     static var previews: some View {
         SheetTopCell(label: "Total Cases", data: "6,000,000", padding: true, loading: true)
@@ -32,9 +39,11 @@ struct SheetInformationCell_Previews: PreviewProvider {
     }
 }
 
+// MARK: - View Extension
+
 extension SheetTopCell {
     
-    var header: some View {
+    private var header: some View {
         VStack(alignment: .leading, spacing: 5) {
             
             Text(data)

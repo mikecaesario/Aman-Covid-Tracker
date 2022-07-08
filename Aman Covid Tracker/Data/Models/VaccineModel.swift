@@ -6,7 +6,6 @@
 //
 
 /*
- 
  JSON Response:
  {
    "All": {

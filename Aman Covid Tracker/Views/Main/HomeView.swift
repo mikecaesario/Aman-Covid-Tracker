@@ -9,6 +9,8 @@ import SwiftUI
 import BottomSheet
 
 struct HomeView: View {
+    // MARK: - Property
+
     @EnvironmentObject var viewModel: CovidDataViewModel
     @Environment(\.scenePhase) var scenePhase
     @AppStorage("first_time") var onboardingView: Bool = true
@@ -27,6 +29,8 @@ struct HomeView: View {
         }
     }
     
+    // MARK: - View
+
     var body: some View {
         ZStack {
             CaseView
@@ -40,7 +44,7 @@ struct HomeView: View {
         }
         .onChange(of: scenePhase, perform: { phase in
             
-            // Get 
+            // Refresh the data when the the app goes back active
             switch phase {
             case .active:
                 viewModel.getAllData()
@@ -53,6 +57,8 @@ struct HomeView: View {
     }
 }
 
+// MARK: - Previews
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
@@ -64,9 +70,11 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+// MARK: - View Extension
+
 extension HomeView {
     
-    var CaseView: some View {
+   private var CaseView: some View {
         NavigationView {
             VStack {
                 CircleInformation(data: viewModel.caseData?.new ?? "Unavailable", label: "NEW CASE")

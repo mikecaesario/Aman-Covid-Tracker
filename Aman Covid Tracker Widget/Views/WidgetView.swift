@@ -9,8 +9,13 @@ import WidgetKit
 import SwiftUI
 
 struct WidgetView : View {
+    
+    // MARK: - Property
+
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var families
+
+    // MARK: - View
 
     var body: some View {
         
@@ -24,6 +29,9 @@ struct WidgetView : View {
         }
     }
 }
+
+// MARK: - Previews
+
 struct WidgetView_Previews: PreviewProvider {
     static var previews: some View {
         WidgetView(entry: CovidCaseEntry(date: Date(), error: false, cases: .previewData))

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SheetHeader: View {
+    
+    // MARK: - View
+
     var body: some View {
         Capsule()
             .foregroundColor(.secondary)
@@ -16,6 +19,8 @@ struct SheetHeader: View {
             .accessibilityHidden(true)
     }
 }
+
+// MARK: - Previews
 
 struct SheetHeader_Previews: PreviewProvider {
     static var previews: some View {

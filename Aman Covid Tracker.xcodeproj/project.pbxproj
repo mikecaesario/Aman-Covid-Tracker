@@ -285,12 +285,11 @@
 		4C30A0032867D74C00C3EA32 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4CB5DAAC2878777A00E7B171 /* Buttons */,
 				4C30A052286D85E100C3EA32 /* Splash Screen */,
 				4C30A02428696D3100C3EA32 /* On Boarding */,
 				4C30A025286982D900C3EA32 /* Circle Information */,
 				4C30A02328696D2200C3EA32 /* Sheets */,
-				4C30A01128686DC500C3EA32 /* MainButton.swift */,
-				4C30A0292869C26A00C3EA32 /* NavigationBarItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -506,6 +505,15 @@
 				4C30A0B428721A6300C3EA32 /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4CB5DAAC2878777A00E7B171 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4C30A01128686DC500C3EA32 /* MainButton.swift */,
+				4C30A0292869C26A00C3EA32 /* NavigationBarItem.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

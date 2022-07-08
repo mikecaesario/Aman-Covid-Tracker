@@ -6,7 +6,6 @@
 //
 
 /*
- 
  JSON Response:
  {
      "Active Cases_text": "+42,935",
