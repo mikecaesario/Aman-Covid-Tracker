@@ -1,36 +1,31 @@
 //
-//  CaseCell.swift
+//  MainCaseCell.swift
 //  Aman Covid Tracker Watch WatchKit Extension
 //
-//  Created by Michael Caesario on 04/07/22.
+//  Created by Michael Caesario on 08/07/22.
 //
 
 import SwiftUI
 
-struct CaseCell: View {
-    let label: String
+struct MainCaseCell: View {
     let data: String
-    let divide: Bool
     let loading: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
             
-            if divide {
-                Divider()
-            }
-            
             Text(data)
-                .font(.title3)
+                .font(Font.system(.title, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(Color.main.accentColor)
                 .redacted(reason: loading ? .placeholder : [])
-            
+
             Spacer()
-                .frame(height: 20)
+                .frame(height: 40)
             
-            Text(label)
-                .font(.footnote)
+            Text("New Confirmed\nCase")
+                .font(.caption2)
+                .fontWeight(.medium)
                 .foregroundColor(.white)
         }
         .padding()
@@ -38,9 +33,9 @@ struct CaseCell: View {
     }
 }
 
-struct caseCell_Previews: PreviewProvider {
+struct MainCaseCell_Previews: PreviewProvider {
     static var previews: some View {
-        CaseCell(label: "Total Case", data: "5,987,098", divide: true, loading: false)
-            .previewLayout(.sizeThatFits)
+        MainCaseCell(data: "+ 1,323", loading: false)
     }
 }
+

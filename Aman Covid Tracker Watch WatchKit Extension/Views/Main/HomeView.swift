@@ -8,29 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    // MARK: - Property
+
     @EnvironmentObject var viewModel: CovidDataViewModel
     @Environment(\.scenePhase) var scenePhase
-    
+
     let dataUnavailable: String = "Unavailable"
     
+    // MARK: - View
+
     var body: some View {
-        VStack{
-            Text("hello")
+        VStack {
+            home
         }
-//        TabView {
-//            newCaseView
-//            caseView
-//        }
-//        .onChange(of: scenePhase) { phase in
-//            switch phase {
-//            case .active:
-//                viewModel.getAllData()
-//            default:
-//                break
-//            }
-//        }
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                viewModel.getAllData()
+            default:
+                break
+            }
+        }
     }
 }
+
+// MARK: - Previews
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -39,36 +42,18 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+// MARK: - View Extension
+
 extension HomeView {
     
-    var newCaseView: some View {
-        
-        VStack(alignment: .leading) {
-            
-            Text(viewModel.caseData?.new ?? "Unavailable")
-                .font(Font.system(.title, design: .rounded))
-                .fontWeight(.bold)
-                .foregroundColor(Color.main.accentColor)
-                .redacted(reason: viewModel.caseLoading ? .placeholder : [])
-
-            Spacer()
-            
-            Text("New Confirmed\nCase")
-                .font(.caption2)
-                .fontWeight(.medium)
-                .foregroundColor(.white)
-        }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-    
-    var caseView: some View {
+    var home: some View {
         ScrollView {
-            VStack(spacing: 5) {
+            VStack(spacing: 10) {
+                MainCaseCell(data: viewModel.caseData?.new ?? dataUnavailable, loading: viewModel.caseLoading)
                 
-                CaseCell(label: "Active Case", data: viewModel.caseData?.active ?? dataUnavailable, divide: false, redact: viewModel.caseLoading)
-                CaseCell(label: "Newly Deceased", data: viewModel.caseData?.newDeath ?? dataUnavailable, divide: true, redact: viewModel.caseLoading)
-                CaseCell(label: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, divide: true, redact: viewModel.caseLoading)
+                CaseCell(label: "Active Case", data: viewModel.caseData?.active ?? dataUnavailable, divide: false, loading: viewModel.caseLoading)
+                CaseCell(label: "Newly Deceased", data: viewModel.caseData?.newDeath ?? dataUnavailable, divide: true, loading: viewModel.caseLoading)
+                CaseCell(label: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, divide: true, loading: viewModel.caseLoading)
                 
                 Button { viewModel.getAllData() } label: { Text("Refresh") }.padding(.vertical)
             }

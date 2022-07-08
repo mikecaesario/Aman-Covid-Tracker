@@ -11,6 +11,7 @@ struct SettingsView: View {
     
     let hotlineURL = URL(string: "tel:123")
     let websiteURL = URL(string: "https://www.who.int")
+    let devDescription: String = "This app was built by Michael Caesario, he used Swift, SwiftUI and Combine as a side project. this app use third party source for the data, and the Developer is not held responsible for any abuse of the information provided. this app or official source for Covid related information in any way."
         
     var body: some View {
         List {
@@ -52,8 +53,9 @@ extension SettingsView {
             VStack(alignment: .leading, spacing: 20) {
                 Text("Developer")
                 
-                Text("This app was built by Michael Caesario, he used Swift, SwiftUI and Combine as a side project. this app use third party source for the data, and the Developer is not held responsible for any abuse of the information provided. this app or official source for Covid related information in any way.")
+                Text(devDescription)
                     .font(.body)
+                    .accessibilityLabel(devDescription)
             }
             .padding(.vertical, 15)
             .frame(maxWidth: .infinity, alignment: .leading)

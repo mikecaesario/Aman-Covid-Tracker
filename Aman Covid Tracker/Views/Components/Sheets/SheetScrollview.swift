@@ -48,7 +48,7 @@ extension SheetScrollview {
                 .font(.title3)
                 .fontWeight(.bold)
                 .padding(.bottom)
-            
+                 
             SheetListItem(label: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, loading: viewModel.caseLoading)
             
             Divider()

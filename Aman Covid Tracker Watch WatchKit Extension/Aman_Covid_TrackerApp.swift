@@ -11,7 +11,7 @@ import SwiftUI
 struct Aman_Covid_TrackerApp: App {
     @StateObject var viewModel = CovidDataViewModel()
 
-    @SceneBuilder var body: some Scene {
+    var body: some Scene {
         WindowGroup {
             NavigationView {
                 HomeView()

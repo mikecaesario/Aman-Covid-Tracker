@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OnBoardingView: View {
     @AppStorage("first_time") var OnBoardingView: Bool = true
+    
+    let onBoardingHeader: String = "Welcome to Aman"
 
     var body: some View {
         VStack {
@@ -33,11 +35,12 @@ struct OnBoardingView_Previews: PreviewProvider {
 
 extension OnBoardingView {
     private var onboardingTitle: some View {
-        Text("Welcome to Aman")
+        Text(onBoardingHeader)
             .font(.largeTitle)
             .foregroundColor(.primary)
             .fontWeight(.bold)
             .padding()
+            .accessibilityLabel(onBoardingHeader)
     }
     
     private var onboardingContent: some View {
