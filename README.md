@@ -1,6 +1,7 @@
 # Aman Covid Tracker
 
-Aman Covid Tracker is a simple and lightweight Covid-19 case tracking app.
+<img align="left" src="https://user-images.githubusercontent.com/53443317/178113306-6ca60b84-e277-458f-bde3-2828b10dbf36.png" width="200" height="200">
+Aman Covid Tracker is a simple and lightweight Covid-19 case tracking app for iOS and watchOS.
 
 ## Screenshots
 
@@ -29,8 +30,3 @@ Clone and run this project in Xcode
 
 ## Tools
 Xcode, Figma
-
-## API Used
-
-## Library Used
-
