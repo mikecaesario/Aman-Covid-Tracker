@@ -15,6 +15,5 @@ struct mainColor {
     let accentColor = Color("AccentColor")
     let backgroundColor = Color("BackgroundColor")
     let sheetBackgroundColor = Color("SheetBackgroundColor")
-    let primaryColor = Color("PrimaryColor")
-    let noCase = Color("NoCaseColor")
+    let pickerBackground = Color("PickerBackgroundColor")
 }

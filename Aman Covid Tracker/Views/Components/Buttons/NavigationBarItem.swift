@@ -16,12 +16,13 @@ struct NavigationBarItem: View {
     // MARK: - View
 
     var body: some View {
-        Text(Image(systemName: image))
+        Image(systemName: image)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 18, height: 18, alignment: .center)
             .foregroundColor(.accentColor)
-            .padding(8)
-            .background(Circle().fill(Color.accentColor.opacity(0.3)))
-            .accessibilityLabel("More Info")
-            .accessibilityAddTraits(.isButton)
+            .padding(10)
+            .background(Circle().fill(Color.main.accentColor.opacity(0.3)))
     }
 }
 
@@ -30,5 +31,9 @@ struct NavigationBarItem: View {
 struct NavigationBarItem_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBarItem(image: "ellipsis")
+            .previewLayout(.sizeThatFits)
+        
+        NavigationBarItem(image: "arrow.clockwise")
+            .previewLayout(.sizeThatFits)
     }
 }

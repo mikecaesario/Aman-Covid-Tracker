@@ -11,7 +11,7 @@ struct HomeView: View {
     
     // MARK: - Property
 
-    @EnvironmentObject var viewModel: CovidDataViewModel
+    @EnvironmentObject private var viewModel: CovidDataViewModel
     @Environment(\.scenePhase) var scenePhase
 
     let dataUnavailable: String = "Unavailable"

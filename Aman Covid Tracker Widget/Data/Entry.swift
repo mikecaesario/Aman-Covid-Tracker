@@ -31,7 +31,7 @@ struct CovidCaseEntry: TimelineEntry {
         
         var active: String {
             if activeCasesText == "" {
-                return "Unavailable"
+                return "N/A"
             } else {
                 return activeCasesText
             }
@@ -39,7 +39,7 @@ struct CovidCaseEntry: TimelineEntry {
         
         var new: String {
             if activeCasesText == "" {
-                return "Unavailable"
+                return "N/A"
             } else {
                 return newCasesText
             }
@@ -47,7 +47,7 @@ struct CovidCaseEntry: TimelineEntry {
         
         var newDeath: String {
             if activeCasesText == "" {
-                return "Unavailable"
+                return "N/A"
             } else {
                 return newDeathsText
             }

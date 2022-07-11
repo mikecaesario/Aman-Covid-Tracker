@@ -22,7 +22,7 @@ struct MainButton: View {
             .frame(maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(Color.accentColor)
+                    .fill(Color.main.accentColor)
                     .frame(height: 50)
             )
             .accessibilityLabel(label)
@@ -36,5 +36,6 @@ struct MainButton: View {
 struct MainButton_Previews: PreviewProvider {
     static var previews: some View {
         MainButton(label: "Continue")
+            .previewLayout(.sizeThatFits)
     }
 }

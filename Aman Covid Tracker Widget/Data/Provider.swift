@@ -5,20 +5,21 @@
 //  Created by Michael Caesario on 02/07/22.
 //
 
-import WidgetKit
 import Combine
+import SwiftUI
+import WidgetKit
 
 class Provider: TimelineProvider {
     
     // MARK: - Property
 
-    let caseURL = URL(string: "https://covid-19.dataflowkit.com/v1/indonesia")
+    @AppStorage("selected_country", store: UserDefaults(suiteName: "group.Aman-Covid-Tracker")) var country: CountryList = .global
     var caseDataSubscription: AnyCancellable?
     
     // MARK: - Combine Functions
 
-    func createTimelineEntry(date: Date, completion: @escaping (CovidCaseEntry) -> ()) {
-        guard let url = caseURL else { return }
+    func createTimelineEntry(date: Date, country: String, completion: @escaping (CovidCaseEntry) -> ()) {
+        guard let url = URL(string: "https://covid-19.dataflowkit.com/v1/\(country)") else { return }
 
         caseDataSubscription = NetworkingManager.downloadData(url: url)
             .decode(type: CovidCaseEntry.CaseData.self, decoder: JSONDecoder())
@@ -30,8 +31,8 @@ class Provider: TimelineProvider {
             })
     }
     
-    func createTimeline(date: Date, completion: @escaping (Timeline<CovidCaseEntry>) -> ()) {
-        guard let url = caseURL else { return }
+    func createTimeline(date: Date, country: String, completion: @escaping (Timeline<CovidCaseEntry>) -> ()) {
+        guard let url = URL(string: "https://covid-19.dataflowkit.com/v1/\(country)") else { return }
 
         caseDataSubscription = NetworkingManager.downloadData(url: url)
             .decode(type: CovidCaseEntry.CaseData.self, decoder: JSONDecoder())
@@ -52,10 +53,10 @@ class Provider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (CovidCaseEntry) -> ()) {
-        createTimelineEntry(date: Date(), completion: completion)
+        createTimelineEntry(date: Date(), country: country.id.replaceSpace(), completion: completion)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<CovidCaseEntry>) -> ()) {
-        createTimeline(date: Date(), completion: completion)
+        createTimeline(date: Date(), country: country.id.replaceSpace(), completion: completion)
     }
 }

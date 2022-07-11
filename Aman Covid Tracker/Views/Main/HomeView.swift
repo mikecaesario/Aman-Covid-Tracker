@@ -7,11 +7,13 @@
 
 import SwiftUI
 import BottomSheet
+import WidgetKit
 
 struct HomeView: View {
+    
     // MARK: - Property
 
-    @EnvironmentObject var viewModel: CovidDataViewModel
+    @EnvironmentObject private var viewModel: CovidDataViewModel
     @Environment(\.scenePhase) var scenePhase
     @AppStorage("first_time") var onboardingView: Bool = true
     
@@ -19,13 +21,14 @@ struct HomeView: View {
     
     // BottomSheet options
     let bottomSheetOptions: [BottomSheet.Options] = [.disableBottomSafeAreaInsets ,.allowContentDrag, .noDragIndicator, .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: -40), .cornerRadius(25), .noBottomPosition, .animation(.interactiveSpring(response: 0.2, dampingFraction: 0.9))]
-        
-    // Toolbar items for navigation buttons to push Settings View
-    let toolbarItem: ToolbarItem = ToolbarItem(placement: .navigationBarTrailing) {
+    
+    let settingsToolbar: ToolbarItem = ToolbarItem(placement: .navigationBarTrailing) {
         NavigationLink {
             SettingsView()
         } label: {
             NavigationBarItem(image: "ellipsis")
+                .accessibilityLabel("Settings")
+                .accessibilityAddTraits(.isButton)
         }
     }
     
@@ -33,6 +36,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
+            // Home screen
             CaseView
             
             // Show SplashScreen when the app runs
@@ -44,10 +48,10 @@ struct HomeView: View {
         }
         .onChange(of: scenePhase, perform: { phase in
             
-            // Refresh the data when the the app goes back active
+            // Reload the Widget when the app goes to the background
             switch phase {
-            case .active:
-                viewModel.getAllData()
+            case .background:
+                WidgetCenter.shared.reloadAllTimelines()
             default:
                 break
             }
@@ -65,8 +69,8 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(preview.covidDataViewModel)
         
         HomeView()
-            .preferredColorScheme(.dark)
             .environmentObject(preview.covidDataViewModel)
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -84,10 +88,10 @@ extension HomeView {
                     .fill(.clear)
             }
             .navigationTitle(viewModel.caseData?.countryText ?? "Unknown")
-            .toolbar { toolbarItem }
+            .toolbar { settingsToolbar }
             // present on boarding if its the first time the user launch the app
             .sheet(isPresented: $onboardingView, content: { OnBoardingView() })
-            .bottomSheet(bottomSheetPosition: $viewModel.sheetPosition, options: bottomSheetOptions, headerContent: { SheetHeader() }) { SheetScrollview().environmentObject(viewModel).ignoresSafeArea() }
+            .bottomSheet(bottomSheetPosition: $viewModel.sheetPosition, options: bottomSheetOptions, headerContent: { SheetHeader() }) { SheetScrollview().ignoresSafeArea() }
         }
     }
 }

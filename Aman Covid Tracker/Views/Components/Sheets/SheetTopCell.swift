@@ -24,6 +24,7 @@ struct SheetTopCell: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
+        .frame(height: 150)
         .background(SheetBackground())
         .padding(padding ? .leading : .trailing)
         .accessibilityLabel(label + data)

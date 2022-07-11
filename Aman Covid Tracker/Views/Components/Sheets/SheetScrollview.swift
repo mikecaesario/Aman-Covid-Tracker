@@ -11,7 +11,7 @@ struct SheetScrollview: View {
     
     // MARK: - Property
 
-    @EnvironmentObject var viewModel: CovidDataViewModel
+    @EnvironmentObject private var viewModel: CovidDataViewModel
     
     let dataUnavailable: String = "Unavailable"
     
@@ -23,6 +23,7 @@ struct SheetScrollview: View {
                 topCell
                 caseCell
                 vaccinationCell
+                populationCell
                 refreshButton
             }
             .padding(.vertical)
@@ -48,6 +49,7 @@ extension SheetScrollview {
             SheetTopCell(label: "Active Case", data: viewModel.caseData?.active ?? dataUnavailable, padding: true, loading: viewModel.caseLoading)
             SheetTopCell(label: "Newly Deceased", data: viewModel.caseData?.newDeath ?? dataUnavailable, padding: false, loading: viewModel.caseLoading)
         }
+        .padding(.top, 10)
     }
     
     private var caseCell: some View {
@@ -56,6 +58,8 @@ extension SheetScrollview {
             Text("Cases")
                 .font(.title3)
                 .fontWeight(.bold)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
                 .padding(.bottom)
                  
             SheetListItem(label: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, loading: viewModel.caseLoading)
@@ -80,6 +84,8 @@ extension SheetScrollview {
             Text("Vaccination")
                 .font(.title3)
                 .fontWeight(.bold)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
                 .padding(.bottom)
             
             SheetListItem(label: "Fully Vaccinated", data: viewModel.vaccineData?.all.vaccinated ?? dataUnavailable, loading: viewModel.vaccineLoading)
@@ -91,6 +97,30 @@ extension SheetScrollview {
             Divider()
             
             SheetListItem(label: "Total Administered", data: viewModel.vaccineData?.all.admin ?? dataUnavailable, loading: viewModel.vaccineLoading)
+        }
+        .padding()
+        .background(SheetBackground())
+        .padding(.horizontal)
+    }
+    
+    private var populationCell: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Other Information")
+                .font(.title3)
+                .fontWeight(.bold)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
+                .padding(.bottom)
+            
+            SheetListItem(label: "Population", data: viewModel.vaccineData?.all.populations ?? dataUnavailable, loading: viewModel.vaccineLoading)
+            
+            Divider()
+
+            SheetListItem(label: "Life Expectancy", data: viewModel.vaccineData?.all.life ?? dataUnavailable, loading: viewModel.vaccineLoading)
+            
+            Divider()
+
+            SheetListItem(label: "Capital City", data: viewModel.vaccineData?.all.capitalCity ?? dataUnavailable, loading: viewModel.vaccineLoading)
         }
         .padding()
         .background(SheetBackground())

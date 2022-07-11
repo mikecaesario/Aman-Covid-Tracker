@@ -46,6 +46,8 @@ extension SmallWidgetView {
             .font(Font.system(.title, design: .rounded))
             .fontWeight(.bold)
             .foregroundColor(Color.widget.accentColor)
+            .minimumScaleFactor(0.6)
+            .lineLimit(1)
             .padding(.top, 10)
     }
     

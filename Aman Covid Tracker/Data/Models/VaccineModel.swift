@@ -68,4 +68,12 @@ struct VaccineDataModel: Codable {
     var partialVaccinated: String {
         return "\(peoplePartiallyVaccinated.formattedVaccineNumb())"
     }
+    
+    var populations: String {
+        return String(population.formattedVaccineNumb())
+    }
+    
+    var life: String {
+        return String(lifeExpectancy) + " years"
+    }
 }

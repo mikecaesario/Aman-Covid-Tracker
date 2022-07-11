@@ -56,10 +56,10 @@ extension OnBoardingView {
         VStack(alignment: .leading, spacing: 10) {
             OnBoardingContentCell(image: "exclamationmark.triangle",
                               label: "Track Covid Case",
-                              content: "Get the latest Covid data")
+                              content: "Get the latest Covid-19 data")
             OnBoardingContentCell(image: "square.stack",
                               label: "Covid Case Breakdown",
-                              content: "Get more detailed Covid information based on Province")
+                              content: "Get more detailed Covid-19 information")
             OnBoardingContentCell(image: "eye",
                               label: "Information at a Glance",
                               content: "Easily access information on the Homescreen with Widgets")

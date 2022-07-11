@@ -69,6 +69,12 @@
 		4C30A0B528721A6300C3EA32 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0B428721A6300C3EA32 /* Color.swift */; };
 		4CB5DAA72873266E00E7B171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C30A07628720A0600C3EA32 /* Assets.xcassets */; };
 		4CB5DAAB2878688F00E7B171 /* MainCaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DAAA2878688F00E7B171 /* MainCaseCell.swift */; };
+		4CB5DAB3287AA2C400E7B171 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DAB2287AA2C400E7B171 /* CountryList.swift */; };
+		4CB5DAB4287AA2C400E7B171 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DAB2287AA2C400E7B171 /* CountryList.swift */; };
+		4CB5DAB5287AA2C400E7B171 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DAB2287AA2C400E7B171 /* CountryList.swift */; };
+		4CB5DAB7287AB7F100E7B171 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DAB6287AB7F000E7B171 /* String.swift */; };
+		4CB5DAB8287AB7F100E7B171 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DAB6287AB7F000E7B171 /* String.swift */; };
+		4CB5DAB9287AB7F100E7B171 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DAB6287AB7F000E7B171 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +188,11 @@
 		4C30A0B02872146D00C3EA32 /* CaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseCell.swift; sourceTree = "<group>"; };
 		4C30A0B428721A6300C3EA32 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4CB5DAAA2878688F00E7B171 /* MainCaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCaseCell.swift; sourceTree = "<group>"; };
+		4CB5DAB2287AA2C400E7B171 /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
+		4CB5DAB6287AB7F000E7B171 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		4CB5DABA287AD66600E7B171 /* Aman Covid Tracker WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Aman Covid Tracker WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		4CB5DABC287B0D7600E7B171 /* Aman Covid TrackerDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Aman Covid TrackerDebug.entitlements"; sourceTree = "<group>"; };
+		4CB5DABD287B48A800E7B171 /* Aman Covid Tracker Watch WatchKit ExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Aman Covid Tracker Watch WatchKit ExtensionDebug.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,8 +228,8 @@
 			children = (
 				4C309FED2867D41D00C3EA32 /* Aman Covid Tracker */,
 				4C30A03B286B5E1400C3EA32 /* Aman Covid Tracker Widget */,
-				4C30A07528720A0300C3EA32 /* Aman Covid Tracker Watch */,
 				4C30A08028720A0600C3EA32 /* Aman Covid Tracker Watch WatchKit Extension */,
+				4C30A07528720A0300C3EA32 /* Aman Covid Tracker Watch */,
 				4C30A036286B5E1400C3EA32 /* Frameworks */,
 				4C309FEC2867D41D00C3EA32 /* Products */,
 			);
@@ -238,6 +249,7 @@
 		4C309FED2867D41D00C3EA32 /* Aman Covid Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				4CB5DABC287B0D7600E7B171 /* Aman Covid TrackerDebug.entitlements */,
 				4C309FEE2867D41D00C3EA32 /* Aman_Covid_TrackerApp.swift */,
 				4C309FFC2867D43200C3EA32 /* Views */,
 				4C30A0072867DA9800C3EA32 /* Data */,
@@ -285,11 +297,11 @@
 		4C30A0032867D74C00C3EA32 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4CB5DAAC2878777A00E7B171 /* Buttons */,
-				4C30A052286D85E100C3EA32 /* Splash Screen */,
 				4C30A02428696D3100C3EA32 /* On Boarding */,
-				4C30A025286982D900C3EA32 /* Circle Information */,
+				4C30A052286D85E100C3EA32 /* Splash Screen */,
 				4C30A02328696D2200C3EA32 /* Sheets */,
+				4C30A025286982D900C3EA32 /* Circle Information */,
+				4CB5DAAC2878777A00E7B171 /* Buttons */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -297,7 +309,7 @@
 		4C30A0062867DA7C00C3EA32 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				4C30A06E2871F7C200C3EA32 /* Errors */,
+				4C30A06E2871F7C200C3EA32 /* Enums */,
 				4C30A01328686E1200C3EA32 /* Extensions */,
 			);
 			path = Utilities;
@@ -324,8 +336,9 @@
 		4C30A01328686E1200C3EA32 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4C30A01428686E2300C3EA32 /* Color.swift */,
+				4CB5DAB6287AB7F000E7B171 /* String.swift */,
 				4C30A0702871FC3800C3EA32 /* Int.swift */,
+				4C30A01428686E2300C3EA32 /* Color.swift */,
 				4C30A057286F412900C3EA32 /* UIApplication.swift */,
 				4C30A06C2871F44300C3EA32 /* PreviewProvider.swift */,
 			);
@@ -372,6 +385,7 @@
 		4C30A03B286B5E1400C3EA32 /* Aman Covid Tracker Widget */ = {
 			isa = PBXGroup;
 			children = (
+				4CB5DABA287AD66600E7B171 /* Aman Covid Tracker WidgetExtension.entitlements */,
 				4C30A03C286B5E1400C3EA32 /* Aman_Covid_Tracker_Widget.swift */,
 				4C30A0612870962800C3EA32 /* Views */,
 				4C30A0622870964300C3EA32 /* Data */,
@@ -417,12 +431,13 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		4C30A06E2871F7C200C3EA32 /* Errors */ = {
+		4C30A06E2871F7C200C3EA32 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				4CB5DAB2287AA2C400E7B171 /* CountryList.swift */,
 				4C30A050286CB54E00C3EA32 /* APIError.swift */,
 			);
-			path = Errors;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		4C30A06F2871F7E600C3EA32 /* Main */ = {
@@ -446,6 +461,7 @@
 		4C30A08028720A0600C3EA32 /* Aman Covid Tracker Watch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4CB5DABD287B48A800E7B171 /* Aman Covid Tracker Watch WatchKit ExtensionDebug.entitlements */,
 				4C30A08128720A0600C3EA32 /* Aman_Covid_TrackerApp.swift */,
 				4C30A0A528720E1D00C3EA32 /* Views */,
 				4C30A0AF2872141200C3EA32 /* Utilities */,
@@ -693,6 +709,7 @@
 				4C309FF12867D41D00C3EA32 /* HomeView.swift in Sources */,
 				4C30A0712871FC3800C3EA32 /* Int.swift in Sources */,
 				4C30A0202868D35500C3EA32 /* SheetScrollview.swift in Sources */,
+				4CB5DAB3287AA2C400E7B171 /* CountryList.swift in Sources */,
 				4C30A0022867D74000C3EA32 /* OnBoardingView.swift in Sources */,
 				4C30A01228686DC500C3EA32 /* MainButton.swift in Sources */,
 				4C30A0092867DAD900C3EA32 /* CaseModel.swift in Sources */,
@@ -701,6 +718,7 @@
 				4C30A00B2867DAF300C3EA32 /* VaccineModel.swift in Sources */,
 				4C30A02228696D0C00C3EA32 /* SheetBackground.swift in Sources */,
 				4C30A00E2867DBC200C3EA32 /* NetworkingManager.swift in Sources */,
+				4CB5DAB7287AB7F100E7B171 /* String.swift in Sources */,
 				4C30A058286F412900C3EA32 /* UIApplication.swift in Sources */,
 				4C30A02A2869C26A00C3EA32 /* NavigationBarItem.swift in Sources */,
 				4C30A0172868707600C3EA32 /* SheetTopCell.swift in Sources */,
@@ -727,6 +745,8 @@
 				4C30A03D286B5E1400C3EA32 /* Aman_Covid_Tracker_Widget.swift in Sources */,
 				4C30A0662870974900C3EA32 /* SmallWidgetView.swift in Sources */,
 				4C30A0642870968C00C3EA32 /* WidgetView.swift in Sources */,
+				4CB5DAB8287AB7F100E7B171 /* String.swift in Sources */,
+				4CB5DAB4287AA2C400E7B171 /* CountryList.swift in Sources */,
 				4C30A0AD287212A800C3EA32 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -747,6 +767,8 @@
 				4C30A0A028720A9800C3EA32 /* NetworkingManager.swift in Sources */,
 				4C30A0AC2872129700C3EA32 /* Int.swift in Sources */,
 				4C30A0A228720A9D00C3EA32 /* CaseModel.swift in Sources */,
+				4CB5DAB9287AB7F100E7B171 /* String.swift in Sources */,
+				4CB5DAB5287AA2C400E7B171 /* CountryList.swift in Sources */,
 				4C30A0AA28720FD800C3EA32 /* PreviewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -892,6 +914,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Aman Covid Tracker/Aman Covid TrackerDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Aman Covid Tracker/Preview Content\"";
@@ -924,6 +947,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Aman Covid Tracker/Aman Covid Tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Aman Covid Tracker/Preview Content\"";
@@ -955,6 +979,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Aman Covid Tracker Widget/Aman Covid Tracker WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KYXA735EC5;
@@ -983,6 +1008,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Aman Covid Tracker Widget/Aman Covid Tracker WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KYXA735EC5;
@@ -1010,6 +1036,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Aman Covid Tracker Watch WatchKit Extension/Aman Covid Tracker Watch WatchKit ExtensionDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Aman Covid Tracker Watch WatchKit Extension/Preview Content\"";

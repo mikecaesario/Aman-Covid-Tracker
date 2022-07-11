@@ -14,6 +14,8 @@ class CovidDataViewModel: ObservableObject {
     @Published var vaccineData: VaccineModel? = nil
     @Published var caseLoading: Bool = true
     @Published var vaccineLoading: Bool = true
+    
+    @Published var countryPicker: CountryList = .global
 
     @Published var sheetPosition: sheetSizes = .middle
     
@@ -23,9 +25,8 @@ class CovidDataViewModel: ObservableObject {
     var caseDataSubscription: AnyCancellable?
     var vaccineDataSubscription: AnyCancellable?
         
-    let caseURL = URL(string: "https://covid-19.dataflowkit.com/v1/indonesia")
-    let vaccineURL = URL(string: "https://covid-api.mmediagroup.fr/v1/vaccines?country=Indonesia")
-    
+    @AppStorage("selected_country", store: UserDefaults(suiteName: "group.Aman-Covid-Tracker")) var country: CountryList = .global
+
     enum sheetSizes: CGFloat, CaseIterable {
         case top = 0.8, middle = 0.5
     }
@@ -37,19 +38,24 @@ class CovidDataViewModel: ObservableObject {
     // MARK: - Functions
     
     func getAllData() {
-        // send back the UI components to redacted
-        self.caseLoading = true
-        self.vaccineLoading = true
         
-        // remove the data from the publisher
-        self.caseData = nil
-        self.vaccineData = nil
+        DispatchQueue.main.async {
+            
+            // send back the UI components to redacted
+            self.caseLoading = true
+            self.vaccineLoading = true
+            
+            // remove the data
+            self.caseData = nil
+            self.vaccineData = nil
+        }
         
         do {
             
             // try to fetch the data
-            try getCase()
-            try getVaccine()
+            try getCase(country: country.id.replaceSpace())
+            try getVaccine(country: country.id.replaceSpace())
+            print("API called")
         } catch(let error) {
             
             // if fails, present an error based on throwing APIError
@@ -58,9 +64,9 @@ class CovidDataViewModel: ObservableObject {
         }
     }
     
-    func getCase() throws {
+    func getCase(country: String) throws {
         // check if the URL is available, else throw an error
-        guard let url = caseURL else { throw APIError.invalidURL }
+        guard let url = URL(string: "https://covid-19.dataflowkit.com/v1/\(country.lowercased())") else { throw APIError.invalidURL }
         
         caseDataSubscription = NetworkingManager.downloadData(url: url)
             .decode(type: CaseModel.self, decoder: JSONDecoder())
@@ -71,9 +77,9 @@ class CovidDataViewModel: ObservableObject {
             })
     }
     
-    func getVaccine() throws {
+    func getVaccine(country: String) throws {
         // check if the URL is available, else throw an error
-        guard let url = vaccineURL else { throw APIError.invalidURL }
+        guard let url = URL(string: "https://covid-api.mmediagroup.fr/v1/vaccines?country=\(country)") else { throw APIError.invalidURL }
         
         vaccineDataSubscription = NetworkingManager.downloadData(url: url)
             .decode(type: VaccineModel.self, decoder: JSONDecoder())
