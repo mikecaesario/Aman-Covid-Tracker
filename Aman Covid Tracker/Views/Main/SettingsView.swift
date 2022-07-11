@@ -53,7 +53,6 @@ extension SettingsView {
                         .foregroundColor(Color.main.accentColor)
                 }
             }
-            // NEEDED SOME CHANGES HERE
             .onChange(of: country, perform: { _ in
                 viewModel.getAllData()
                 print("New Setting Applied")
