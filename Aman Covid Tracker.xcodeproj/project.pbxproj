@@ -67,6 +67,7 @@
 		4C30A0AE287212A800C3EA32 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A050286CB54E00C3EA32 /* APIError.swift */; };
 		4C30A0B12872146D00C3EA32 /* CaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0B02872146D00C3EA32 /* CaseCell.swift */; };
 		4C30A0B528721A6300C3EA32 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30A0B428721A6300C3EA32 /* Color.swift */; };
+		4C5A1361287D54E5008D102D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5A1360287D54E5008D102D /* SettingsView.swift */; };
 		4CB5DAA72873266E00E7B171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C30A07628720A0600C3EA32 /* Assets.xcassets */; };
 		4CB5DAAB2878688F00E7B171 /* MainCaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DAAA2878688F00E7B171 /* MainCaseCell.swift */; };
 		4CB5DAB3287AA2C400E7B171 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DAB2287AA2C400E7B171 /* CountryList.swift */; };
@@ -187,6 +188,7 @@
 		4C30A09028720A0700C3EA32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C30A0B02872146D00C3EA32 /* CaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseCell.swift; sourceTree = "<group>"; };
 		4C30A0B428721A6300C3EA32 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		4C5A1360287D54E5008D102D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4CB5DAAA2878688F00E7B171 /* MainCaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCaseCell.swift; sourceTree = "<group>"; };
 		4CB5DAB2287AA2C400E7B171 /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
 		4CB5DAB6287AB7F000E7B171 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				4C30A08328720A0600C3EA32 /* HomeView.swift */,
+				4C5A1360287D54E5008D102D /* SettingsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				4C30A08228720A0600C3EA32 /* Aman_Covid_TrackerApp.swift in Sources */,
 				4C30A09D28720A8F00C3EA32 /* CovidDataViewModel.swift in Sources */,
 				4CB5DAAB2878688F00E7B171 /* MainCaseCell.swift in Sources */,
+				4C5A1361287D54E5008D102D /* SettingsView.swift in Sources */,
 				4C30A0A028720A9800C3EA32 /* NetworkingManager.swift in Sources */,
 				4C30A0AC2872129700C3EA32 /* Int.swift in Sources */,
 				4C30A0A228720A9D00C3EA32 /* CaseModel.swift in Sources */,

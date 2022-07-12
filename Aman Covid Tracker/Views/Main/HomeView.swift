@@ -22,16 +22,6 @@ struct HomeView: View {
     // BottomSheet options
     let bottomSheetOptions: [BottomSheet.Options] = [.disableBottomSafeAreaInsets ,.allowContentDrag, .noDragIndicator, .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: -40), .cornerRadius(25), .noBottomPosition, .animation(.interactiveSpring(response: 0.2, dampingFraction: 0.9))]
     
-    let settingsToolbar: ToolbarItem = ToolbarItem(placement: .navigationBarTrailing) {
-        NavigationLink {
-            SettingsView()
-        } label: {
-            NavigationBarItem(image: "ellipsis")
-                .accessibilityLabel("Settings")
-                .accessibilityAddTraits(.isButton)
-        }
-    }
-    
     // MARK: - View
 
     var body: some View {
@@ -48,8 +38,10 @@ struct HomeView: View {
         }
         .onChange(of: scenePhase, perform: { phase in
             
-            // Reload the Widget when the app goes to the background
+            // Fetch the data when the app become active and reload the Widget when the app goes to the background
             switch phase {
+            case .active:
+                viewModel.getAllData()
             case .background:
                 WidgetCenter.shared.reloadAllTimelines()
             default:
@@ -88,7 +80,30 @@ extension HomeView {
                     .fill(.clear)
             }
             .navigationTitle(viewModel.caseData?.countryText ?? "Unknown")
-            .toolbar { settingsToolbar }
+            .toolbar {
+                
+                // Refresh button
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        viewModel.getAllData()
+                    } label: {
+                        NavigationBarItem(image: "arrow.clockwise")
+                            .accessibilityLabel("Refresh")
+                            .accessibilityAddTraits(.isButton)
+                    }
+                }
+                
+                // Segue to SettingsView
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        NavigationBarItem(image: "ellipsis")
+                            .accessibilityLabel("Settings")
+                            .accessibilityAddTraits(.isButton)
+                    }
+                }
+            }
             // present on boarding if its the first time the user launch the app
             .sheet(isPresented: $onboardingView, content: { OnBoardingView() })
             .bottomSheet(bottomSheetPosition: $viewModel.sheetPosition, options: bottomSheetOptions, headerContent: { SheetHeader() }) { SheetScrollview().ignoresSafeArea() }

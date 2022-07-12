@@ -15,8 +15,6 @@ class CovidDataViewModel: ObservableObject {
     @Published var caseLoading: Bool = true
     @Published var vaccineLoading: Bool = true
     
-    @Published var countryPicker: CountryList = .global
-
     @Published var sheetPosition: sheetSizes = .middle
     
     @Published var showAlert: Bool = false

@@ -14,12 +14,14 @@ struct HomeView: View {
     @EnvironmentObject private var viewModel: CovidDataViewModel
     @Environment(\.scenePhase) var scenePhase
 
+    @AppStorage("selected_country", store: UserDefaults(suiteName: "group.Aman-Covid-Tracker")) var country: CountryList = .global
+
     let dataUnavailable: String = "Unavailable"
     
     // MARK: - View
 
     var body: some View {
-        VStack {
+        NavigationView {
             home
         }
         .onChange(of: scenePhase) { phase in
@@ -37,8 +39,10 @@ struct HomeView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
-            .environmentObject(preview.covidDataViewModel)
+        NavigationView {
+            HomeView()
+                .environmentObject(preview.covidDataViewModel)
+        }
     }
 }
 
@@ -49,11 +53,14 @@ extension HomeView {
     var home: some View {
         ScrollView {
             VStack(spacing: 10) {
-                MainCaseCell(data: viewModel.caseData?.new ?? dataUnavailable, loading: viewModel.caseLoading)
+                
+                MainCaseCell(data: viewModel.caseData?.new ?? dataUnavailable, country: country.id, loading: viewModel.caseLoading)
                 
                 CaseCell(label: "Active Case", data: viewModel.caseData?.active ?? dataUnavailable, divide: false, loading: viewModel.caseLoading)
                 CaseCell(label: "Newly Deceased", data: viewModel.caseData?.newDeath ?? dataUnavailable, divide: true, loading: viewModel.caseLoading)
                 CaseCell(label: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, divide: true, loading: viewModel.caseLoading)
+                
+                NavigationLink("Settings") { SettingsView().environmentObject(viewModel) }
                 
                 Button { viewModel.getAllData() } label: { Text("Refresh") }.padding(.vertical)
             }

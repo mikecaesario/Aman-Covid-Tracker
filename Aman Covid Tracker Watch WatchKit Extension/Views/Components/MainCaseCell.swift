@@ -12,6 +12,7 @@ struct MainCaseCell: View {
     // MARK: - Property
 
     let data: String
+    let country: String
     let loading: Bool
     
     // MARK: - View
@@ -19,11 +20,18 @@ struct MainCaseCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             
+            Text(country)
+                .font(.title2)
+                .fontWeight(.medium)
+                .padding(.bottom)
+            
             Text(data)
                 .font(Font.system(.title, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(Color.main.accentColor)
                 .redacted(reason: loading ? .placeholder : [])
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
 
             Spacer()
                 .frame(height: 40)
@@ -42,7 +50,7 @@ struct MainCaseCell: View {
 
 struct MainCaseCell_Previews: PreviewProvider {
     static var previews: some View {
-        MainCaseCell(data: "+ 1,323", loading: false)
+        MainCaseCell(data: "+ 1,323", country: "Indonesia", loading: false)
     }
 }
 

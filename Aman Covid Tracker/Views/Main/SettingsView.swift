@@ -11,7 +11,6 @@ struct SettingsView: View {
     
     // MARK: - Property
     @EnvironmentObject private var viewModel: CovidDataViewModel
-    @AppStorage("selected_country", store: UserDefaults(suiteName: "group.Aman-Covid-Tracker")) var country: CountryList = .global
 
     let devDescription: String = "This app was built by Michael Caesario, for this project he used Swift, SwiftUI and Combine.\n\nThis app use third party source for the data, and the Developer is not held responsible for any abuse of the information provided by the external source."
         
@@ -24,6 +23,7 @@ struct SettingsView: View {
             version
         }
         .listStyle(.insetGrouped)
+        .onDisappear { viewModel.getAllData() }
     }
 }
 
@@ -46,17 +46,13 @@ extension SettingsView {
     
     private var countryPicker: some View {
         Section {
-            Picker("Country", selection: $country) {
+            Picker("Country", selection: $viewModel.country) {
                 ForEach(CountryList.allCases, id: \.self) { country in
                     Text(country.id)
                         .tag(country)
                         .foregroundColor(Color.main.accentColor)
                 }
             }
-            .onChange(of: country, perform: { _ in
-                viewModel.getAllData()
-                print("New Setting Applied")
-            })
         }
         .listRowBackground(Color.main.accentColor.opacity(0.4))
         .font(.headline)
