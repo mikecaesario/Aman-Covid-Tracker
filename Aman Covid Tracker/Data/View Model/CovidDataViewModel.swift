@@ -53,7 +53,6 @@ class CovidDataViewModel: ObservableObject {
             // try to fetch the data
             try getCase(country: country.id.replaceSpace())
             try getVaccine(country: country.id.replaceSpace())
-            print("API called")
         } catch(let error) {
             
             // if fails, present an error based on throwing APIError

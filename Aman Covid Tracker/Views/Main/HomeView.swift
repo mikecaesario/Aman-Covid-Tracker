@@ -73,13 +73,13 @@ extension HomeView {
    private var CaseView: some View {
         NavigationView {
             VStack {
-                CircleInformation(data: viewModel.caseData?.new ?? "Unavailable", label: "NEW CASE")
+                CircleInformation(data: viewModel.caseData?.new ?? "N/A", label: "NEW CASE")
                 
                 // to fill out the spaces and pushing the Circle up below the NavigationTitle, Spacer don't work
                 Rectangle()
                     .fill(.clear)
             }
-            .navigationTitle(viewModel.caseData?.countryText ?? "Unknown")
+            .navigationTitle(viewModel.caseData?.countryText ?? "Loading")
             .toolbar {
                 
                 // Refresh button

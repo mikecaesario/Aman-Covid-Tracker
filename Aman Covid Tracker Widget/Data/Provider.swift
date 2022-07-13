@@ -40,7 +40,7 @@ class Provider: TimelineProvider {
                   receiveValue: { returnedCases in
                 
                 let entry = CovidCaseEntry(date: Date(), error: false, cases: returnedCases)
-                let refresh = Calendar.current.date(byAdding: .hour, value: 4, to: date)!
+                let refresh = Calendar.current.date(byAdding: .hour, value: 2, to: date)!
                 let timeline = Timeline(entries: [entry], policy: .after(refresh))
                 completion(timeline)
             })

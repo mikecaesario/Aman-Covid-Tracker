@@ -13,7 +13,7 @@ struct SheetScrollview: View {
 
     @EnvironmentObject private var viewModel: CovidDataViewModel
     
-    let dataUnavailable: String = "Unavailable"
+    let dataUnavailable: String = "N/A"
     
     // MARK: - View
     
@@ -23,8 +23,7 @@ struct SheetScrollview: View {
                 topCell
                 caseCell
                 vaccinationCell
-                populationCell
-                refreshButton
+                otherCell
             }
             .padding(.vertical)
         }
@@ -103,7 +102,7 @@ extension SheetScrollview {
         .padding(.horizontal)
     }
     
-    private var populationCell: some View {
+    private var otherCell: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Other Information")
                 .font(.title3)
@@ -124,15 +123,6 @@ extension SheetScrollview {
         }
         .padding()
         .background(SheetBackground())
-        .padding(.horizontal)
-    }
-    
-    private var refreshButton: some View {
-        Button {
-            viewModel.getAllData()
-        } label: {
-            MainButton(label: "Refresh")
-                .padding(.bottom)
-        }
+        .padding([.horizontal, .bottom])
     }
 }

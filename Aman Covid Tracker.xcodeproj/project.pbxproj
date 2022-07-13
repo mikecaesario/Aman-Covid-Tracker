@@ -194,7 +194,6 @@
 		4CB5DAB6287AB7F000E7B171 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		4CB5DABA287AD66600E7B171 /* Aman Covid Tracker WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Aman Covid Tracker WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		4CB5DABC287B0D7600E7B171 /* Aman Covid TrackerDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Aman Covid TrackerDebug.entitlements"; sourceTree = "<group>"; };
-		4CB5DABD287B48A800E7B171 /* Aman Covid Tracker Watch WatchKit ExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Aman Covid Tracker Watch WatchKit ExtensionDebug.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,7 +462,6 @@
 		4C30A08028720A0600C3EA32 /* Aman Covid Tracker Watch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4CB5DABD287B48A800E7B171 /* Aman Covid Tracker Watch WatchKit ExtensionDebug.entitlements */,
 				4C30A08128720A0600C3EA32 /* Aman_Covid_TrackerApp.swift */,
 				4C30A0A528720E1D00C3EA32 /* Views */,
 				4C30A0AF2872141200C3EA32 /* Utilities */,

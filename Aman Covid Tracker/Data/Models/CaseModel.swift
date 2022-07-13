@@ -39,7 +39,7 @@ struct CaseModel: Codable {
     // Sometimes the data returned as an empty string, use the property below to avoid empty data showing inside the UI
         var active: String {
         if activeCasesText == "" {
-            return "Unavailable"
+            return "N/A"
         } else {
             return activeCasesText
         }
@@ -47,7 +47,7 @@ struct CaseModel: Codable {
     
     var new: String {
         if activeCasesText == "" {
-            return "Unavailable"
+            return "N/A"
         } else {
             return newCasesText
         }
@@ -55,7 +55,7 @@ struct CaseModel: Codable {
     
     var newDeath: String {
         if activeCasesText == "" {
-            return "Unavailable"
+            return "N/A"
         } else {
             return newDeathsText
         }

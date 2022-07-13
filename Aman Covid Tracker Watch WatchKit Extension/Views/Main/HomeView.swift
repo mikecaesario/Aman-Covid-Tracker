@@ -16,7 +16,7 @@ struct HomeView: View {
 
     @AppStorage("selected_country", store: UserDefaults(suiteName: "group.Aman-Covid-Tracker")) var country: CountryList = .global
 
-    let dataUnavailable: String = "Unavailable"
+    let dataUnavailable: String = "N/A"
     
     // MARK: - View
 
@@ -54,15 +54,17 @@ extension HomeView {
         ScrollView {
             VStack(spacing: 10) {
                 
-                MainCaseCell(data: viewModel.caseData?.new ?? dataUnavailable, country: country.id, loading: viewModel.caseLoading)
+                MainCaseCell(data: viewModel.caseData?.new ?? dataUnavailable, country: viewModel.caseData?.countryText ?? "Loading", loading: viewModel.caseLoading)
                 
                 CaseCell(label: "Active Case", data: viewModel.caseData?.active ?? dataUnavailable, divide: false, loading: viewModel.caseLoading)
                 CaseCell(label: "Newly Deceased", data: viewModel.caseData?.newDeath ?? dataUnavailable, divide: true, loading: viewModel.caseLoading)
                 CaseCell(label: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, divide: true, loading: viewModel.caseLoading)
                 
-                NavigationLink("Settings") { SettingsView().environmentObject(viewModel) }
-                
-                Button { viewModel.getAllData() } label: { Text("Refresh") }.padding(.vertical)
+                VStack(spacing: 0) {
+                    NavigationLink("Settings") { SettingsView().environmentObject(viewModel) }
+                    
+                    Button { viewModel.getAllData() } label: { Text("Refresh") }.padding(.vertical)
+                }
             }
         }
     }

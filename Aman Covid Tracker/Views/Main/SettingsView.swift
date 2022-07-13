@@ -23,7 +23,9 @@ struct SettingsView: View {
             version
         }
         .listStyle(.insetGrouped)
-        .onDisappear { viewModel.getAllData() }
+        .onChange(of: viewModel.country) { _ in
+            viewModel.getAllData()
+        }
     }
 }
 

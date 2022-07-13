@@ -62,7 +62,7 @@ struct CircleInformation: View {
                     .minimumScaleFactor(0.6)
                     .lineLimit(1)
                 
-                if data != "Unavailable" {
+                if data != "N/A" {
                     
                     Text(label)
                         .font(Font.system(.title3, design: .rounded))
