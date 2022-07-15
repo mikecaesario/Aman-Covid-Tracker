@@ -30,5 +30,5 @@ SwiftUI, Combine, WidgetKit
 ## How to Use
 Clone and run this project in Xcode
 
-## Tools
-Xcode, Figma
+## Known Issue
+Since this project is using two different API, some country might have missing data/ unavailable.
