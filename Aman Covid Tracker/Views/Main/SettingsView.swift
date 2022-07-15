@@ -12,7 +12,7 @@ struct SettingsView: View {
     // MARK: - Property
     @EnvironmentObject private var viewModel: CovidDataViewModel
 
-    let devDescription: String = "This app was built by Michael Caesario, for this project he used Swift, SwiftUI and Combine.\n\nThis app use third party source for the data, and the Developer is not held responsible for any abuse of the information provided by the external source."
+    let devDescription: String = "This app was built by Michael Caesario, for this project he used Swift, SwiftUI and Combine.\n\nThis app use third party source for the data, and the Developer is not held responsible for any abuse of the information provided by the external source.\n\nThe Covid-19 case and vaccination data that is used in this app comes from a free API from https://mmediagroup.fr and https://covid-19.dataflowkit.com/."
         
     // MARK: - View
 
