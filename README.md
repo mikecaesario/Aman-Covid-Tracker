@@ -3,7 +3,36 @@
 <img align="left" src="https://user-images.githubusercontent.com/53443317/178113306-6ca60b84-e277-458f-bde3-2828b10dbf36.png" width="180" height="180">
 Aman Covid Tracker is a simple and lightweight Covid-19 case tracking app for iOS and watchOS.
 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
 ## Screenshots
+
+###### iOS
+
+<p float="top">
+  <img src="https://user-images.githubusercontent.com/53443317/179368501-dafe2700-966b-41af-a3c7-764113018735.PNG" height="360" />
+  <img src="https://user-images.githubusercontent.com/53443317/179369221-9c4c266c-a760-4264-8110-c8a6ec48f9a2.gif" height="360" /> 
+  <img src="https://user-images.githubusercontent.com/53443317/179368570-3abff69d-3346-4ee6-ad48-83ce622efd0f.PNG" height="360" />
+  <img src="https://user-images.githubusercontent.com/53443317/179369454-4e11e76d-f4d4-41b7-a7ac-ab62888983b5.gif" height="360" />
+  <img src="https://user-images.githubusercontent.com/53443317/179370379-e35f60ce-75aa-43a6-9186-74962f4326b4.gif" height="360" />
+</p>
+
+###### watchOS
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/53443317/179369694-437784e3-37a4-43cd-8ac1-a5c399918b09.PNG" height="220" />
+  <img src="https://user-images.githubusercontent.com/53443317/179369731-c4ccdf89-4786-4659-83c7-fc6968092d00.PNG" height="220" /> 
+  <img src="https://user-images.githubusercontent.com/53443317/179369732-e9b6237e-3289-4138-9ddd-845352cc7256.PNG" height="220" />
+  <img src="https://user-images.githubusercontent.com/53443317/179369735-ccee14b2-6274-4d1a-9782-87aeff563845.PNG" height="220" />
+</p>
+
 
 ## Features
 * Track Covid-19 cases and vaccination progress
@@ -30,5 +59,5 @@ SwiftUI, Combine, WidgetKit
 ## How to Use
 Clone and run this project in Xcode
 
-## Known Issue
+## Known Issues
 Since this project is using two different API, some country might have missing data/ unavailable.
