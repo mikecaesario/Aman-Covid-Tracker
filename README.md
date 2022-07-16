@@ -20,7 +20,11 @@ Aman Covid Tracker is a simple and lightweight Covid-19 case tracking app for iO
   <img src="https://user-images.githubusercontent.com/53443317/179368501-dafe2700-966b-41af-a3c7-764113018735.PNG" height="360" />
   <img src="https://user-images.githubusercontent.com/53443317/179369221-9c4c266c-a760-4264-8110-c8a6ec48f9a2.gif" height="360" /> 
   <img src="https://user-images.githubusercontent.com/53443317/179368570-3abff69d-3346-4ee6-ad48-83ce622efd0f.PNG" height="360" />
-  <img src="https://user-images.githubusercontent.com/53443317/179369454-4e11e76d-f4d4-41b7-a7ac-ab62888983b5.gif" height="360" />
+  
+</p>
+
+<p float="top">
+  <img src="https://user-images.githubusercontent.com/53443317/179370471-932490ce-9ef5-49ec-8c11-c55d2b5e5285.gif" height="360" />
   <img src="https://user-images.githubusercontent.com/53443317/179370379-e35f60ce-75aa-43a6-9186-74962f4326b4.gif" height="360" />
 </p>
 
