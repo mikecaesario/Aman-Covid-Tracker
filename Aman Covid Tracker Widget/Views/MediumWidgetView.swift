@@ -59,6 +59,8 @@ extension MediumWidgetView {
             Spacer()
 
         }
+        .minimumScaleFactor(0.6)
+        .lineLimit(1)
         .padding()
         .background(Circle().fill(Color.widget.accentColor)
                         .blur(radius: 10)
@@ -93,7 +95,10 @@ extension MediumWidgetView {
                 .font(.caption2)
                 .foregroundColor(.secondary)
                 .unredacted()
+            
         }
+        .minimumScaleFactor(0.6)
+        .lineLimit(1)
         .padding(10)
         .background(RoundedRectangle(cornerRadius: 17, style: .continuous)
                         .fill(Color.widget.accentColor.opacity(0.1)))

@@ -17,7 +17,7 @@ struct Aman_Covid_Tracker_Widget: Widget {
             WidgetView(entry: entry)
         }
         .configurationDisplayName("Aman Covid Tracker")
-        .description("Get the latest Covid-19 case information.")
+        .description("Get the latest COVID-19 case information.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

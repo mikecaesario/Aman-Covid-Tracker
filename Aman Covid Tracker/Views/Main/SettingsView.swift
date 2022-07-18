@@ -14,9 +14,9 @@ struct SettingsView: View {
 
     let devDescription: String = "This app was built by Michael Caesario, for this project he used Swift, SwiftUI and Combine.\n\nThis app use third party source for the data, and the Developer is not held responsible for any abuse of the information provided by the external source."
     
-    let apiDescription: String = "The Covid-19 case and vaccination data that is used in this app comes from a free API from https://mmediagroup.fr and https://covid-19.dataflowkit.com/."
+    let apiDescription: String = "The COVID-19 case and vaccination data that is used in this app comes from a free API from https://mmediagroup.fr and https://covid-19.dataflowkit.com/."
     
-    let librariesDescription: String = "This app use third party libraries BottomSheet from Lucas Zischka for the bottom sheet on the main view."
+    let librariesDescription: String = "This app use a third party libraries BottomSheet from Lucas Zischka for the bottom sheet on the home view."
         
     // MARK: - View
 

@@ -14,8 +14,6 @@ struct HomeView: View {
     @EnvironmentObject private var viewModel: CovidDataViewModel
     @Environment(\.scenePhase) var scenePhase
 
-    @AppStorage("selected_country", store: UserDefaults(suiteName: "group.Aman-Covid-Tracker")) var country: CountryList = .global
-
     let dataUnavailable: String = "N/A"
     
     // MARK: - View
