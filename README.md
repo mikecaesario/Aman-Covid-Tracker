@@ -1,10 +1,8 @@
 # Aman Covid Tracker
 
 <img align="left" src="https://user-images.githubusercontent.com/53443317/178113306-6ca60b84-e277-458f-bde3-2828b10dbf36.png" width="180" height="180">
-Aman Covid Tracker is a simple and lightweight Covid-19 case tracking app for iOS and watchOS.
-<br />
-<br />
-As someone who always gets anxious since the early stages of the pandemic, I thought it'd be great if I could just glance at the most important information about COVID-19 cases on my phone homescreen and my watch, so I decided to build myself a COVID-19 tracking app. This little project was a really fun project for me to explore more about Combine and iOS development. I am the sole developer and asset designer for this project.
+
+As someone who always gets anxious since the early stages of the pandemic, I thought it'd be great if I could just glance at the most important information about COVID-19 cases on my phone homescreen and my watch, so I decided to build myself a COVID-19 tracking app. This little project was a really fun project for me to explore more about Combine and iOS development. I am the sole developer and asset designer for this project. Aman Covid Tracker is a simple and lightweight COVID-19 case tracking app for iOS and watchOS.
 
 <br />
 <br />
