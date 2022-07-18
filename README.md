@@ -67,7 +67,7 @@ Since this project is using two different API, some country might have missing d
 ## Credits
 API: The Covid-19 case and vaccination data that is used in this app comes from a free API from https://mmediagroup.fr and https://covid-19.dataflowkit.com/.
 <br />
-Libraries: This app use third party libraries [BottomSheet](https://github.com/lucaszischka/BottomSheet) from Lucas Zischka for the bottom sheet on the main view.
+Libraries: This app use third party libraries [BottomSheet](https://github.com/lucaszischka/BottomSheet) from Lucas Zischka for the bottom sheet on the HomeView.
 
 
 ## License
