@@ -61,7 +61,7 @@ extension HomeView {
                 CaseCell(label: "Total Case", data: viewModel.caseData?.totalCasesText ?? dataUnavailable, divide: true, loading: viewModel.caseLoading)
                 
                 VStack(spacing: 0) {
-                    NavigationLink("Settings") { SettingsView().environmentObject(viewModel) }
+                    NavigationLink("Country") { SettingsView().environmentObject(viewModel) }
                     
                     Button { viewModel.getAllData() } label: { Text("Refresh") }.padding(.vertical)
                 }

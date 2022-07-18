@@ -24,6 +24,8 @@ struct MainCaseCell: View {
                 .font(.title2)
                 .fontWeight(.medium)
                 .padding(.bottom)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
             
             Text(data)
                 .font(Font.system(.title, design: .rounded))
