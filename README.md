@@ -14,14 +14,14 @@ As someone who always gets anxious since the early stages of the pandemic, I tho
 
 <p float="top">
   <img src="https://user-images.githubusercontent.com/53443317/179368501-dafe2700-966b-41af-a3c7-764113018735.PNG" height="380" />
-  <img src="https://user-images.githubusercontent.com/53443317/179385989-340a710d-34d0-4f55-bc1f-b0f990c685e2.gif" height="380" /> 
+  <img src="https://user-images.githubusercontent.com/53443317/179385989-340a710d-34d0-4f55-bc1f-b0f990c685e2.gif" height="380" width="200" /> 
   <img src="https://user-images.githubusercontent.com/53443317/179368570-3abff69d-3346-4ee6-ad48-83ce622efd0f.PNG" height="380" />
   
 </p>
 
 <p float="top">
-  <img src="https://user-images.githubusercontent.com/53443317/179370471-932490ce-9ef5-49ec-8c11-c55d2b5e5285.gif" height="380" />
-  <img src="https://user-images.githubusercontent.com/53443317/179370379-e35f60ce-75aa-43a6-9186-74962f4326b4.gif" height="380" />
+  <img src="https://user-images.githubusercontent.com/53443317/179370471-932490ce-9ef5-49ec-8c11-c55d2b5e5285.gif" height="380" width="200" />
+  <img src="https://user-images.githubusercontent.com/53443317/179370379-e35f60ce-75aa-43a6-9186-74962f4326b4.gif" height="380" width="180" />
 </p>
 
 ###### watchOS
