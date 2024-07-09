@@ -1,6 +1,6 @@
 # Aman Covid Tracker
 
-<img align="left" src="https://user-images.githubusercontent.com/53443317/178113306-6ca60b84-e277-458f-bde3-2828b10dbf36.png" width="140" height="140">
+<img align="left" src="https://user-images.githubusercontent.com/53443317/178113306-6ca60b84-e277-458f-bde3-2828b10dbf36.png" width="150" height="150">
 
 Aman COVID Tracker is a simple and lightweight app for tracking COVID-19 cases and vaccination progress on iOS and watchOS. Users can select a preferred country or view global data to see detailed information such as new cases, active cases, recent deaths, and vaccination progress, including fully vaccinated and partially vaccinated population number. Additionally, the app provides more information about the specified country, such as life expectancy and population. Users can also access this information through the watchOS app or directly on their home screen via widgets.
 
