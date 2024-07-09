@@ -1,12 +1,8 @@
 # Aman Covid Tracker
 
-<img align="left" src="https://user-images.githubusercontent.com/53443317/178113306-6ca60b84-e277-458f-bde3-2828b10dbf36.png" width="180" height="180">
+<img align="left" src="https://user-images.githubusercontent.com/53443317/178113306-6ca60b84-e277-458f-bde3-2828b10dbf36.png" width="140" height="140">
 
-As someone who always gets anxious since the early stages of the pandemic, I thought it'd be great if I could just glance at the most important information about COVID-19 cases on my phone homescreen and my watch, so I decided to build myself a COVID-19 tracking app. This little project was a really fun project for me to explore more about Combine and iOS development. I am the sole developer and asset designer for this project. Aman Covid Tracker is a simple and lightweight COVID-19 case tracking app for iOS and watchOS.
-
-<br />
-<br />
-<br />
+Aman COVID Tracker is a simple and lightweight app for tracking COVID-19 cases and vaccination progress on iOS and watchOS. Users can select a preferred country or view global data to see detailed information such as new cases, active cases, recent deaths, and vaccination progress, including fully vaccinated and partially vaccinated population number. Additionally, the app provides more information about the specified country, such as life expectancy and population. Users can also access this information through the watchOS app or directly on their home screen via widgets.
 
 ## Screenshots
 
@@ -37,32 +33,34 @@ As someone who always gets anxious since the early stages of the pandemic, I tho
 
 
 ## Features
-* Track Covid-19 cases and vaccination progress
-* Easily access Covid-19 case information at your Homescreen with Widgets
-* Choose and track Covid-19 case by Country
-* Available on watchOS
-* Available in Light and Dark Mode
+* Track COVID-19 cases and vaccination progress
+* Select and track COVID-19 data by country or globally
+* View detailed information including:	new cases, active cases, recent deaths, vaccination progress
+* Additional country-specific information (life expectancy, population)
+* Access COVID-19 data on your watchOS app
+* View COVID-19 information directly on your home screen with widgets
 
-## What I Learned
-* API call with Combine
-* Reusable Views
-* Working with WidgetKit and watchOS
-* AppStorage/ UserDefaults and App Groups
-* Swift Package Manager
-* Design and built app icon from scratch with Figma
-
-## Frameworks
-SwiftUI, Combine, WidgetKit
+## Technologies Used
+Swift, SwiftUI, Combine, WidgetKit, App Groups for shared UserDefaults across different targets
 
 ## Minimum Target
 * iOS 14.0
 * watchOS 7.0
 
 ## How to Use
-Clone and run this project in Xcode
+1.	Clone the repository.
+2.	Open the project in Xcode.
+3.	Set up App Groups:
+  *	In Xcode, select your project in the Project Navigator.
+  *	Select your app target and go to the Signing & Capabilities tab.
+  *	Click the + Capability button and add App Groups.
+  *	Create a new App Group (e.g., group.com.yourusername.AmanCovidTracker).
+  *	Repeat these steps for the watchOS app target and the Widget target, ensuring they all use the same App Group.
+5.	Update the App Group identifier to match the one you created in the setup step.
+6.	Build and run the app.
 
 ## Known Issues
-Since this project is using two different API, some country might have missing data/ unavailable.
+Since this project is using two different API, some country might have missing data/ unavailable. Most countries (if not all) is no longer updating their COVID-19 cases.
 
 ## Credits
 API: The Covid-19 case and vaccination data that is used in this app comes from a free API from https://mmediagroup.fr and https://covid-19.dataflowkit.com/.
